@@ -16,13 +16,13 @@ function init () {
         bubble.style.height = `${size.toString()}px`;
         bubble.style.width = `${size.toString()}px`;
         let imgIndex = Math.floor(Math.random() * imgArray.length);
-        console.log(imgIndex);
         bubble.appendChild(imgArray[imgIndex]);
         imgArray.splice(imgIndex, 1);
-        console.log(imgArray);
         bubbleElements.push(bubble);
+        bubbleWrapper.appendChild(bubble);
+        bubble.classList.add('bubbleInClass');
+        bubble.onmouseleave = () => {
+            bubble.remove();
+        }
     }
-    bubbleElements.forEach(bub => {
-        bubbleWrapper.appendChild(bub);
-    });
 }

@@ -1,3 +1,7 @@
+:root {
+    --growSize: 310px;
+    --shrinkSize: 300px;
+}
 .bubbleDiv {
     position: relative;
     border-radius: 100%;
@@ -9,6 +13,12 @@
     justify-content: center;
     overflow: hidden;
     margin: 10px;
+    opacity: 0%;
+    transition: .5s ease-in all;
+}
+.bubbleDiv:hover {
+    width: var(--growSize) !important;
+    height: var(--growSize) !important;
 }
 .bubbleImg {
     position: relative;
@@ -29,4 +39,15 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+.bubbleInClass {
+    animation: 2s ease-in bubbleInAnim forwards;
+}
+@keyframes bubbleInAnim {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
