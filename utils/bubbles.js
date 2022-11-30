@@ -2,10 +2,10 @@ window.onload = () => init();
 
 function init () {
     let bubbleElements = [];
-    let numElements = 9;
-    let minSize = 75;
+    let numElements = 10;
+    let minSize = 200;
     let maxSize = 300;
-    let bubbleWrapper = document.querySelector('.main');
+    let bubbleWrapper = document.querySelector('.bubbleHolder');
     let imgNodeList = document.querySelectorAll('.bubbleImg');
     let imgArray = Array.from(imgNodeList);
     if (imgArray.length < numElements) numElements = imgArray.length;
@@ -15,7 +15,11 @@ function init () {
         bubble.classList.add('bubbleDiv');
         bubble.style.height = `${size.toString()}px`;
         bubble.style.width = `${size.toString()}px`;
-        bubble.appendChild(imgArray[elemIndex]);
+        let imgIndex = Math.floor(Math.random() * imgArray.length);
+        console.log(imgIndex);
+        bubble.appendChild(imgArray[imgIndex]);
+        imgArray.splice(imgIndex, 1);
+        console.log(imgArray);
         bubbleElements.push(bubble);
     }
     bubbleElements.forEach(bub => {
