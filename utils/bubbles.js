@@ -1,28 +1,74 @@
 window.onload = () => init();
 
-function init () {
-    let bubbleElements = [];
-    let numElements = 10;
-    let minSize = 200;
-    let maxSize = 300;
+const init = () => {
+    let availableQuadrants = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    let numElements = 9;
     let bubbleWrapper = document.querySelector('.bubbleHolder');
-    let imgNodeList = document.querySelectorAll('.bubbleImg');
-    let imgArray = Array.from(imgNodeList);
+    const imgNodeList = document.querySelectorAll('.bubbleImg');
+    const fullImgArray = Array.from(imgNodeList);
+    let imgArray = fullImgArray.slice();
     if (imgArray.length < numElements) numElements = imgArray.length;
     for(let elemIndex = 0; elemIndex < numElements; elemIndex++) {
-        let bubble = document.createElement('div');
-        let size = Math.floor((Math.random() * (maxSize - minSize) + minSize));
-        bubble.classList.add('bubbleDiv');
-        bubble.style.height = `${size.toString()}px`;
-        bubble.style.width = `${size.toString()}px`;
-        let imgIndex = Math.floor(Math.random() * imgArray.length);
-        bubble.appendChild(imgArray[imgIndex]);
-        imgArray.splice(imgIndex, 1);
-        bubbleElements.push(bubble);
-        bubbleWrapper.appendChild(bubble);
-        bubble.classList.add('bubbleInClass');
-        bubble.onmouseleave = () => {
-            bubble.remove();
-        }
+        createBubble(imgArray, fullImgArray, bubbleWrapper, availableQuadrants);
     }
+}
+const createBubble = (imgs, full, wrapper, quads) => {
+    let bubble = document.createElement('div');
+    bubble.className += 'bubbleDiv';
+    let quad = quads[Math.floor(Math.random() * quads.length)];
+    quads.splice(quads.indexOf(quad), 1);
+    bubble.dataset.quad = `${quad}`;
+    let classString = getBubbleLocation(quad);
+    bubble.className += ` ${classString}`;
+    let imgIndex = Math.floor(Math.random() * imgs.length);
+    console.log(imgs[imgIndex]);
+    bubble.appendChild(imgs[imgIndex]);
+    imgs.splice(imgIndex, 1);
+    console.log(imgs.length);
+    console.log(full.length);
+    if(imgs.length === 0) {
+        imgs = full.slice();
+    }
+    wrapper.appendChild(bubble);
+    bubble.className += ` bubbleInClass`;
+    bubble.onmouseleave = () => {
+        quads.push(parseInt(bubble.dataset.quad));
+        bubble.remove();
+        setTimeout(() => {
+            createBubble(imgs, full, wrapper, quads);
+        }, 200);
+    }
+}
+const getBubbleLocation = (quad) => {
+    let classString = '';
+    switch (quad) {
+        case 0:
+            classString = 'top left';
+        break;
+        case 1:
+            classString = 'top center';
+        break;
+        case 2:
+            classString = 'top right';
+        break;
+        case 3:
+            classString = 'left middle';
+        break;
+        case 4:
+            classString = 'middle center';
+        break;
+        case 5:
+            classString = 'right middle';
+        break;
+        case 6:
+            classString = 'bottom left';
+        break;
+        case 7:
+            classString = 'bottom center';
+        break;
+        case 8:
+            classString = 'bottom right';
+        break;
+    }
+    return classString;
 }
