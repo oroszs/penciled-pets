@@ -1,8 +1,8 @@
 :root {
     --normalSize: 180px;
-    --growSize: 200px;
 }
 .bubbleDiv {
+    box-shadow: 0px 0px 10px white;
     position: absolute;
     border-radius: 5px;
     background-color: black;
@@ -15,10 +15,6 @@
     transition: .5s all;
     width: var(--normalSize);
     height: var(--normalSize);
-}
-.bubbleDiv:hover {
-    width: var(--growSize);
-    height: var(--growSize);
 }
 .bubbleImg {
     position: relative;
@@ -34,18 +30,23 @@
     width: 60%;
     height: 600px;
 }
-.bubbleInClass {
-    animation: 2s ease-in bubbleInAnim forwards;
+.bubbleFadeClass {
+    animation: 10s ease-in bubbleFadeAnim forwards;
 }
-@keyframes bubbleInAnim {
-    from {
+@keyframes bubbleFadeAnim {
+    0% {
         opacity: 0%;
     }
-    to {
+    20% {
         opacity: 100%;
     }
+    80% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
 }
-
 .top {
     top: 0px;
 }

@@ -1,33 +1,44 @@
 window.onload = () => init();
 
 const init = () => {
+    let intervalTime;
     let availableQuadrants = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-    let numElements = 9;
+    let numElements = 3;
     let bubbleWrapper = document.querySelector('.bubbleHolder');
     const fullImgArray = Array.from(document.querySelectorAll('.bubbleImg'));
     let imgArray = fullImgArray.slice();
-    if (imgArray.length < numElements) numElements = imgArray.length;
-    for(let elemIndex = 0; elemIndex < numElements; elemIndex++) {
-        createBubble(imgArray, fullImgArray, bubbleWrapper, availableQuadrants);
+    let quadIndex = availableQuadrants[Math.floor(Math.random() * availableQuadrants.length)];
+    let quad = availableQuadrants.splice(availableQuadrants.indexOf(quadIndex), 1);
+    let imgIndex = Math.floor(Math.random() * imgArray.length);
+    let chosenImg = imgArray.splice(imgIndex, 1);
+    if(imgArray.length === 0) {
+        imgArray = fullImgArray.slice();
     }
+    const tryToCreateBubble = (img, wrap, quad) => {
+        console.log(img, wrap, quad);
+        if(quad) {
+            createBubble(img, wrap, quad);
+            bubbles++;
+        }
+        if(bubbles === 1) {
+            intervalTime = 0;
+        } else if (bubbles < numElements) {
+            intervalTime = 1000;
+        } else {
+            intervalTime = 3000;
+        }
+    }
+    setInterval(tryToCreateBubble, intervalTime, chosenImg, bubbleWrapper, quad);
 }
-const createBubble = (imgs, full, wrapper, quads) => {
+const createBubble = (img, wrapper, quad) => {
     let bubble = document.createElement('div');
     bubble.className += 'bubbleDiv';
-    let quad = quads[Math.floor(Math.random() * quads.length)];
-    quads.splice(quads.indexOf(quad), 1);
     bubble.dataset.quad = `${quad}`;
     let classString = getBubbleLocation(quad);
     bubble.className += ` ${classString}`;
-    let imgIndex = Math.floor(Math.random() * imgs.length);
-    bubble.appendChild(imgs[imgIndex]);
-    imgs.splice(imgIndex, 1);
-    console.log(imgs.length);
-    if(imgs.length === 0) {
-        imgs = full.slice();
-    }
+    bubble.appendChild(img);
     wrapper.appendChild(bubble);
-    bubble.className += ` bubbleInClass`;
+    bubble.className += ` bubbleFadeClass`;
 }
 const getBubbleLocation = (quad) => {
     let classString = '';
