@@ -4,8 +4,7 @@ const init = () => {
     let availableQuadrants = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     let numElements = 9;
     let bubbleWrapper = document.querySelector('.bubbleHolder');
-    const imgNodeList = document.querySelectorAll('.bubbleImg');
-    const fullImgArray = Array.from(imgNodeList);
+    const fullImgArray = Array.from(document.querySelectorAll('.bubbleImg'));
     let imgArray = fullImgArray.slice();
     if (imgArray.length < numElements) numElements = imgArray.length;
     for(let elemIndex = 0; elemIndex < numElements; elemIndex++) {
@@ -21,23 +20,14 @@ const createBubble = (imgs, full, wrapper, quads) => {
     let classString = getBubbleLocation(quad);
     bubble.className += ` ${classString}`;
     let imgIndex = Math.floor(Math.random() * imgs.length);
-    console.log(imgs[imgIndex]);
     bubble.appendChild(imgs[imgIndex]);
     imgs.splice(imgIndex, 1);
     console.log(imgs.length);
-    console.log(full.length);
     if(imgs.length === 0) {
         imgs = full.slice();
     }
     wrapper.appendChild(bubble);
     bubble.className += ` bubbleInClass`;
-    bubble.onmouseleave = () => {
-        quads.push(parseInt(bubble.dataset.quad));
-        bubble.remove();
-        setTimeout(() => {
-            createBubble(imgs, full, wrapper, quads);
-        }, 200);
-    }
 }
 const getBubbleLocation = (quad) => {
     let classString = '';
