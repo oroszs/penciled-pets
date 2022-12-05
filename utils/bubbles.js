@@ -1,21 +1,31 @@
 window.onload = () => init();
 
 const init = () => {
-    let intervalTime = 2000;
+    let intervalTime = 0;
     let availableQuadrants = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     let bubbleWrapper = document.querySelector('.bubbleHolder');
-    let imgArray = Array.from(document.querySelectorAll('.bubbleImg')).slice();
-    const tryToCreateBubble = (imgArray, wrap, availableQuadrants) => {
+    let full = Array.from(document.querySelectorAll('.bubbleImg')).slice();
+    let imgArray = full.slice();
+    let numStartingBubbles = 1;
+    let bubbles = 0;
+    const tryToCreateBubble = (startingBubbles, bubbles, full, imgArray, wrap, availableQuadrants) => {
+        console.log('try');
         let quadIndex = Math.floor(Math.random() * availableQuadrants.length);
         let quadArr = availableQuadrants.splice(availableQuadrants.indexOf(quadIndex), 1);
         let quad = quadArr[0];
         if(quad >= 0){
             let imgIndex = Math.floor(Math.random() * imgArray.length);
-            let imgSrc = imgArray[imgIndex].src;
+            let imgTagArr = imgArray.splice(imgIndex, 1);
+            let imgSrc = imgTagArr[0].src;
+            bubbles++;
+            if(bubbles >= startingBubbles) intervalTime = 2000;
+            if(imgArray.length === 0) imgArray = full.slice();
             createBubble(imgSrc, wrap, quad, availableQuadrants);
+            console.log('success');
         }
+        setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, full, imgArray, bubbleWrapper, availableQuadrants);
     }
-    setInterval(tryToCreateBubble, intervalTime, imgArray, bubbleWrapper, availableQuadrants);
+    setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, full, imgArray, bubbleWrapper, availableQuadrants);
 }
 const createBubble = (imgSrc, wrapper, quad, quads) => {
     let bubble = document.createElement('div');
