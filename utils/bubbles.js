@@ -1,24 +1,18 @@
 window.onload = () => init();
 
 const init = () => {
-    let intervalTime = 3000;
+    let intervalTime = 1000;
     let availableQuadrants = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     let bubbleWrapper = document.querySelector('.bubbleHolder');
-    const fullImgArray = Array.from(document.querySelectorAll('.bubbleImg'));
-    let imgArray = fullImgArray.slice();
+    let full = Array.from(document.querySelectorAll('.bubbleImg'));
+    let imgArray = full.slice();
     const tryToCreateBubble = (imgArray, wrap, availableQuadrants) => {
+        let imgIndex = Math.floor(Math.random() * imgArray.length);
+        chosenImg = imgArray[imgIndex];
         let quadIndex = Math.floor(Math.random() * availableQuadrants.length);
         let quadArr = availableQuadrants.splice(availableQuadrants.indexOf(quadIndex), 1);
         let quad = quadArr[0];
-        let imgIndex = Math.floor(Math.random() * imgArray.length);
-        let imgArr = imgArray.splice(imgArray.indexOf(imgIndex), 1);
-        let chosenImg = imgArr[0];
-        if(imgArray.length === 0) {
-            imgArray = fullImgArray.slice();
-        }
-        if(quad) {
-            createBubble(chosenImg, wrap, quad, availableQuadrants);
-        }
+        createBubble(chosenImg, wrap, quad, availableQuadrants);
     }
     setInterval(tryToCreateBubble, intervalTime, imgArray, bubbleWrapper, availableQuadrants);
 }
