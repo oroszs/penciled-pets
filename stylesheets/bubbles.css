@@ -1,5 +1,6 @@
 :root {
     --normalSize: 150px;
+    --smallSize: 50px;
 }
 .bubbleDiv {
     box-shadow: 0px 0px 10px white;
@@ -66,4 +67,20 @@
 .center {
     left: 50%;
     margin-left: calc(var(--normalSize) * -.5);
+}
+@media screen and (max-width: 400px) {
+    .bubbleDiv {
+        width: var(--smallSize);
+        height: var(--smallSize);
+    }
+    .bubbleHolder {
+        width: 200px;
+        height: 200px;
+    }
+    .middle {
+        margin-top: calc(var(--smallSize) * -.5);
+    }
+    .center {
+        margin-left: calc(var(--smallSize) * -.5);
+    }
 }
