@@ -19,12 +19,19 @@
 h1 {
     font-family:'Pinyon Script';
 }
+header {
+    position: absolute;
+    top: 20px;
+}
+footer {
+    position: absolute;
+    bottom: 20px;
+}
 footer h1 {
     display: inline;
     flex: none;
 }
 footer a {
-    padding: 20px;
     border-radius: 100%;
     text-decoration: none;
     color: white;
