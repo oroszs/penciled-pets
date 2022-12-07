@@ -2,14 +2,13 @@ window.onload = () => init();
 
 const init = () => {
     let intervalTime = 0;
-    let availableQuadrants = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    let availableQuadrants = [0, 1, 2, 3];
     let bubbleWrapper = document.querySelector('.bubbleHolder');
     let full = Array.from(document.querySelectorAll('.bubbleImg')).slice();
     let imgArray = full.slice();
     let numStartingBubbles = 1;
     let bubbles = 0;
     const tryToCreateBubble = (startingBubbles, bubbles, full, imgArray, wrap, availableQuadrants) => {
-        console.log('try');
         let quadIndex = Math.floor(Math.random() * availableQuadrants.length);
         let quadArr = availableQuadrants.splice(availableQuadrants.indexOf(quadIndex), 1);
         let quad = quadArr[0];
@@ -21,7 +20,6 @@ const init = () => {
             if(bubbles >= startingBubbles) intervalTime = 2000;
             if(imgArray.length === 0) imgArray = full.slice();
             createBubble(imgSrc, wrap, quad, availableQuadrants);
-            console.log('success');
         }
         setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, full, imgArray, bubbleWrapper, availableQuadrants);
     }
@@ -51,27 +49,12 @@ const getBubbleLocation = (quad) => {
             classString = 'top left';
         break;
         case 1:
-            classString = 'top center';
-        break;
-        case 2:
             classString = 'top right';
         break;
-        case 3:
-            classString = 'left middle';
-        break;
-        case 4:
-            classString = 'middle center';
-        break;
-        case 5:
-            classString = 'right middle';
-        break;
-        case 6:
+        case 2:
             classString = 'bottom left';
         break;
-        case 7:
-            classString = 'bottom center';
-        break;
-        case 8:
+        case 3:
             classString = 'bottom right';
         break;
     }
