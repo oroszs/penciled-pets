@@ -23,9 +23,12 @@ header {
     position: absolute;
     top: 20px;
 }
-footer {
-    position: absolute;
-    bottom: 20px;
+header a {
+    text-decoration: none;
+    color: white;
+}
+header a:visited {
+    color: white;
 }
 footer h1 {
     display: inline;
@@ -45,6 +48,8 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    position: absolute;
+    bottom: 20px;
 }
 #currentImgDiv{
     width: 300px;
