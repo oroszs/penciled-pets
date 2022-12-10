@@ -30,6 +30,16 @@ header a {
 header a:visited {
     color: white;
 }
+#mainImgDiv {
+    width: 80%;
+    height: 400px;
+    background-color: rgb(150, 239, 255);
+}
+#imgScrollDiv {
+    width: 90%;
+    height: 100px;
+    background-color: rgb(0, 44, 139);
+}
 footer h1 {
     display: inline;
     flex: none;
@@ -68,6 +78,12 @@ footer {
     width: 250px;
     height: 250px;
     border-radius: 5px;
+}
+#main {
+    display: flex;
+    position: relative;
+    width: 1000px;
+    height: 500px;
 }
 #imgScrollbar {
     flex: none;
