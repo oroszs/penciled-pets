@@ -60,6 +60,23 @@ header a:visited {
     color: black;
     border-radius: 5px;
     overflow: hidden;
+    position: relative;
+}
+.arrow {
+    position: absolute;
+}
+#left-arrow {
+    margin-left: 0px;
+    left: 0px;
+}
+#right-arrow {
+    margin-right: 0px;
+    right: 0px;
+}
+.anchor-arrow {
+    position: absolute;
+    text-decoration: none;
+    color: black;
 }
 .scroll-div {
     height: 75px;
