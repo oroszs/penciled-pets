@@ -2,6 +2,7 @@
     box-sizing: border-box;
     --mainimg-color: rgb(255, 255, 255);
     --scrollbar-color: rgb(175, 178, 255);
+    --half: rgba(255, 255, 255, .5);
 }
 .wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -50,9 +51,8 @@ header a:visited {
     height: auto;    
 }
 #imgScrollDiv {
-    margin: 20px;
-    width: 90%;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     background-color: var(--scrollbar-color);
     display: flex;
     flex-direction: row;
@@ -60,23 +60,44 @@ header a:visited {
     color: black;
     border-radius: 5px;
     overflow: hidden;
-    position: relative;
+    scroll-behavior: smooth;
+    box-shadow: 0px 0px 10px white;
+}
+#scrollDivHolder {
+    width: 90%;
+    height: 100px;
+    margin: 20px;
 }
 .arrow {
-    position: absolute;
+    transition: 1s all;
+}
+.arrow:hover {
+    --half: white;
 }
 #left-arrow {
-    margin-left: 0px;
-    left: 0px;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid var(--half);
 }
 #right-arrow {
-    margin-right: 0px;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid var(--half);
+}
+#left-anchor-arrow {
+    left: 0px;
+}
+#right-anchor-arrow {
     right: 0px;
 }
 .anchor-arrow {
+    margin-top: 40px;
     position: absolute;
     text-decoration: none;
-    color: black;
 }
 .scroll-div {
     height: 75px;
@@ -93,6 +114,12 @@ header a:visited {
     flex: none;
     width: 70px;
     height: 70px;
+}
+#first{
+    scroll-margin-inline-start: 10px;
+}
+#last {
+    scroll-margin-inline-end: 10px;
 }
 footer h1 {
     display: inline;
