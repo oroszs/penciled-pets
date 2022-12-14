@@ -109,17 +109,13 @@ header a:visited {
     align-items: center;
     margin: 10px;
     border-radius: 5px;
+    scroll-margin-inline-start: 10px;
+    scroll-margin-inline-end: 10px;
 }
 .scroll-img {
     flex: none;
     width: 70px;
     height: 70px;
-}
-#first{
-    scroll-margin-inline-start: 10px;
-}
-#last {
-    scroll-margin-inline-end: 10px;
 }
 footer h1 {
     display: inline;
