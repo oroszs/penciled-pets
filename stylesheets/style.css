@@ -148,3 +148,33 @@ footer {
     align-items: center;
     justify-content: center;
 }
+@media screen and (max-width: 1000px) {
+    #main {
+        width: 600px;
+    }
+}
+@media screen and (max-width: 650px) {
+    #main {
+        width: 300px;
+    }
+    #mainImgDiv {
+        width: 290px;
+        height: 290px;
+    }
+    #main-img {
+        width: 280px;
+        height: auto;
+    }
+    #left-anchor-arrow {
+        display: none;
+    }
+    #right-anchor-arrow {
+        display: none;
+    }
+    #scrollDivHolder {
+        width: 285px;
+    }
+    #imgScrollDiv {
+        overflow-x: auto;
+    }
+}
