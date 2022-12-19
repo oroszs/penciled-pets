@@ -1,12 +1,13 @@
 :root {
-    --normalSize: 250px;
+    --normal-height: 250px;
+    --normal-width: 200px;
     --smallSize: 125px;
 }
 .bubbleDiv {
-    box-shadow: 0px 0px 10px white;
+    box-shadow: 0px 0px 15px rgb(0, 229, 255);
     position: absolute;
     border-radius: 5px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,8 +15,8 @@
     overflow: hidden;
     opacity: 0%;
     transition: .5s all;
-    width: var(--normalSize);
-    height: var(--normalSize);
+    width: var(--normal-width);
+    height: var(--normal-height);
 }
 .bubbleImg {
     position: relative;
@@ -28,7 +29,7 @@
 }
 .bubbleHolder {
     position: relative;
-    width: 525px;
+    width: 425px;
     height: 525px;
 }
 .bubbleFadeClass {

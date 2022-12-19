@@ -1,8 +1,12 @@
 :root {
     box-sizing: border-box;
-    --mainimg-color: rgb(255, 255, 255);
-    --scrollbar-color: rgb(175, 178, 255);
+    --mainimg-color: rgba(0, 4, 255, 0.323);
+    --scrollbar-color: rgb(0, 0, 0);
+    --bg-side-color: rgb(0, 0, 93);
+    --bg-mid-color: rgb(10, 0, 49);
     --half: rgba(255, 255, 255, .5);
+    --main-img-height: 400px;
+    --main-img-width: 305px;
 }
 .wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -17,7 +21,7 @@
     right: 0px;
     top: 0px;
     bottom: 0px;
-    background-color: rgb(0, 1, 25);
+    background: linear-gradient(to left, var(--bg-side-color), var(--bg-mid-color) 30% 70%, var(--bg-side-color));
 }
 h1 {
     font-family:'Pinyon Script';
@@ -34,9 +38,9 @@ header a:visited {
     color: white;
 }
 #mainImgDiv {
-    width: 350px;
-    height: 350px;
-    background-color: var(--mainimg-color);
+    overflow: hidden;
+    width: var(--main-img-width);
+    height: calc(var(--main-img-height - 5));
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -47,13 +51,13 @@ header a:visited {
     box-shadow: 0px 0px 10px white;
 }
 #main-img {
-    width: 340px;
-    height: auto;    
+    width: auto;
+    height: var(--main-img-height);    
 }
 #imgScrollDiv {
     width: 100%;
     height: 100%;
-    background-color: var(--scrollbar-color);
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -61,7 +65,6 @@ header a:visited {
     border-radius: 5px;
     overflow: hidden;
     scroll-behavior: smooth;
-    box-shadow: 0px 0px 10px white;
 }
 #scrollDivHolder {
     width: 950px;
@@ -100,9 +103,10 @@ header a:visited {
     text-decoration: none;
 }
 .scroll-div {
+    overflow: hidden;
     height: 75px;
     width: 75px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,8 +118,8 @@ header a:visited {
 }
 .scroll-img {
     flex: none;
-    width: 70px;
-    height: 70px;
+    width: auto;
+    height: 100px;
 }
 footer h1 {
     display: inline;
@@ -165,8 +169,8 @@ footer {
         height: 290px;
     }
     #main-img {
-        width: 280px;
-        height: auto;
+        width: auto;
+        height: 280px;
     }
     #left-anchor-arrow {
         display: none;
