@@ -7,6 +7,8 @@
     --half: rgba(255, 255, 255, .5);
     --main-img-height: 400px;
     --main-img-width: 305px;
+    --main-img-height-sm: 300px;
+    --main-img-width-sm: 200px;
 }
 .wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -165,12 +167,12 @@ footer {
         width: 300px;
     }
     #mainImgDiv {
-        width: 290px;
-        height: 290px;
+        width: var(--main-img-wdht-sm);
+        height: calc(var(--main-img-height-sm - 5));
     }
     #main-img {
         width: auto;
-        height: 280px;
+        height: var(--main-img-height-sm);
     }
     #left-anchor-arrow {
         display: none;
