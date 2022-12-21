@@ -16,24 +16,30 @@ const init = () => {
             let imgIndex = Math.floor(Math.random() * imgArray.length);
             let imgTagArr = imgArray.splice(imgIndex, 1);
             let imgSrc = imgTagArr[0].src;
+            let imgOrientation = imgTagArr[0].dataset.orientation;
             bubbles++;
             if(bubbles >= startingBubbles) intervalTime = 2000;
             if(imgArray.length === 0) imgArray = full.slice();
-            createBubble(imgSrc, wrap, quad, availableQuadrants);
+            createBubble(imgSrc, imgOrientation, wrap, quad, availableQuadrants);
         }
         setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, full, imgArray, bubbleWrapper, availableQuadrants);
     }
     setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, full, imgArray, bubbleWrapper, availableQuadrants);
 }
-const createBubble = (imgSrc, wrapper, quad, quads) => {
+const createBubble = (imgSrc, orientation, wrapper, quad, quads) => {
     let bubble = document.createElement('div');
     bubble.className += 'bubbleDiv';
     bubble.dataset.quad = `${quad}`;
     let classString = getBubbleLocation(quad);
     bubble.className += ` ${classString}`;
     let imgEl = document.createElement('img');
-    imgEl.classList.add('bubbleImg');
     imgEl.src = imgSrc;
+    if(orientation === 'portrait') {
+        imgEl.classList.add('portraitImg')
+    } else {
+        imgEl.classList.add('landscapeImg');
+    }
+    imgEl.classList.add('bubbleImg');
     bubble.appendChild(imgEl);
     wrapper.appendChild(bubble);
     bubble.className += ` bubbleFadeClass`;
