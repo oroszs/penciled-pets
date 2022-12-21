@@ -161,6 +161,9 @@ footer {
     #scrollDivHolder {
         width: 570px;
     }
+    .wrapper {
+        background: linear-gradient(to left, var(--bg-side-color), var(--bg-mid-color) 10% 90%, var(--bg-side-color));
+    }
 }
 @media screen and (max-width: 700px) {
     .main {
