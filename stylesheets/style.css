@@ -1,8 +1,7 @@
 :root {
     box-sizing: border-box;
-    --mainimg-color: rgba(0, 4, 255, 0.323);
     --scrollbar-color: rgb(0, 0, 0);
-    --bg-side-color: rgb(0, 0, 93);
+    --bg-side-color: rgb(0, 0, 68);
     --bg-mid-color: rgb(10, 0, 49);
     --half: rgba(255, 255, 255, .5);
     --main-img-height: 400px;
@@ -162,7 +161,7 @@ footer {
         width: 570px;
     }
     .wrapper {
-        background: linear-gradient(to left, var(--bg-side-color), var(--bg-mid-color) 20% 80%, var(--bg-side-color));
+        background: linear-gradient(to left, var(--bg-side-color), var(--bg-mid-color) 30% 70%, var(--bg-side-color));
     }
 }
 @media screen and (max-width: 700px) {
