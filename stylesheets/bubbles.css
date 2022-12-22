@@ -1,7 +1,6 @@
 :root {
-    --normal-height: 250px;
-    --normal-width: 250px;
-    --smallSize: 125px;
+    --normal-size: 200px;
+    --small-size: 125px;
 }
 .bubbleDiv {
     box-shadow: 0px 0px 15px rgb(0, 229, 255);
@@ -15,8 +14,8 @@
     overflow: hidden;
     opacity: 0%;
     transition: .5s all;
-    width: var(--normal-width);
-    height: var(--normal-height);
+    width: var(--normal-size);
+    height: var(--normal-size);
 }
 .bubbleImg {
     position: relative;
@@ -34,9 +33,12 @@
     display: none;
 }
 .bubbleHolder {
-    position: relative;
-    width: 525px;
-    height: 525px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -55%);
+    width: calc(var(--normal-size) * 2 + var(--normal-size) / 5);
+    height: calc(var(--normal-size) * 2 + var(--normal-size) / 5);
 }
 .bubbleFadeClass {
     animation: 6s ease-in bubbleFadeAnim forwards;
@@ -58,10 +60,6 @@
 .top {
     top: 0px;
 }
-.middle {
-    top: 50%;
-    margin-top: calc(var(--normalSize) * -.5);
-}
 .bottom {
     bottom: 0px;
 }
@@ -71,23 +69,13 @@
 .right {
     right: 0px;
 }
-.center {
-    left: 50%;
-    margin-left: calc(var(--normalSize) * -.5);
-}
 @media screen and (max-width: 550px) {
     .bubbleDiv {
-        width: var(--smallSize);
-        height: var(--smallSize);
+        width: var(--small-size);
+        height: var(--small-size);
     }
     .bubbleHolder {
-        width: 275px;
-        height: 275px;
-    }
-    .middle {
-        margin-top: calc(var(--smallSize) * -.5);
-    }
-    .center {
-        margin-left: calc(var(--smallSize) * -.5);
+        height: calc(var(--small-size) * 2 + var(--small-size) / 10);
+        width: calc(var(--small-size) * 2 + var(--small-size) / 10);
     }
 }
