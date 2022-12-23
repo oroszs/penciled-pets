@@ -50,6 +50,7 @@ p {
 .contact-header {
     font-size: 15pt;
     z-index: 10;
+    padding-bottom: 20px;
 }
 .contact-body {
     font-size: 13pt;
