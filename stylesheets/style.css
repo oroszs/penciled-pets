@@ -49,7 +49,7 @@ p {
 }
 .contact-header {
     font-size: 15pt;
-    padding-bottom: 20px;
+    z-index: 10;
 }
 .contact-body {
     font-size: 13pt;
