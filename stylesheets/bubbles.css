@@ -69,13 +69,13 @@
 .right {
     right: 0px;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 550px), (max-height: 650px) {
     .bubbleDiv {
         width: var(--small-size);
         height: var(--small-size);
     }
     .bubbleHolder {
-        height: calc(var(--small-size) * 2 + var(--small-size) / 10);
-        width: calc(var(--small-size) * 2 + var(--small-size) / 10);
+        height: calc(var(--small-size) * 2 + var(--small-size) / 5);
+        width: calc(var(--small-size) * 2 + var(--small-size) / 5);
     }
 }

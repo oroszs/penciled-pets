@@ -9,15 +9,14 @@
     --main-img-height-sm: 300px;
     --main-img-width-sm: 200px;
 }
+p {
+    margin-block: .5em;
+}
 .wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: white;
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     left: 0px;
     right: 0px;
     top: 0px;
@@ -27,25 +26,25 @@
 }
 .contact {
     color: black;
-    position: absolute;
+    position: fixed;
     bottom: -60px;
-    transform: translate(-50%, 0%);
-    left: 50%;
     transition: all .5s ease-in;
+    flex: none;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center
 }
 .contact:hover {
     bottom: 0px;
 }
 .contact-text {
     font-family: 'Gothic A1';
-    width: fit-content;
     background-color: rgb(240, 232, 217);
     padding: 15px;
     border-radius: 5px 5px 0px 0px;
     margin: 0px;
+    width: fit-content;
     flex: none;
 }
 .contact-header {
@@ -63,9 +62,10 @@ h1 {
     font-family:'Gothic A1';
 }
 header {
-    position: absolute;
-    top: -30px;
-    font-size: 25pt;
+    padding: 0px;
+    margin: .75em;
+    position: relative;
+    font-size: 28pt;
 }
 header a {
     text-decoration: none;
@@ -163,6 +163,9 @@ footer {
     width: 100%;
     height: 100px;
     bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .navbar h1 {
     display: inline;
@@ -176,14 +179,14 @@ footer {
     color: white;
 }
 .navbar {
+    font-size: 18pt;
     width: 100%;
     height: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
-    top: 100px;
+    position: relative;
 }
 .main {
     display: flex;
@@ -194,6 +197,15 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+@media screen and (max-height: 700px) {
+    header {
+        font-size: 23pt;
+        margin: .5em;
+    }
+    .navbar {
+        font-size: 15pt;
+    }
 }
 @media screen and (max-width: 1100px) {
     .main {
@@ -229,5 +241,16 @@ footer {
     }
     #imgScrollDiv {
         overflow-x: auto;
+    }
+    @media screen and (max-width: 550px) {
+        .contact-header {
+            width: 200px;
+        }
+        .contact-body {
+            width: 300px;
+        }
+        .contact {
+            bottom: -100px;
+        }
     }
 }
