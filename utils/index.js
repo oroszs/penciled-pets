@@ -13,4 +13,3 @@ const setup = () => {
         }
     });
 }
-window.onload = () => setup();

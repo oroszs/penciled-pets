@@ -1,4 +1,7 @@
-window.onload = () => init();
+window.onload = () => {
+    init();
+    setup();
+}
 
 const init = () => {
     let intervalTime = 0;
