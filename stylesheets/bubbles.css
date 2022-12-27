@@ -79,3 +79,27 @@
         width: calc(var(--small-size) * 2 + var(--small-size) / 5);
     }
 }
+@media screen and (max-height: 400px) {
+    .right {
+        display: none;
+    }
+    .bottom {
+        display: none;
+    }
+    .top, .left{
+        top: initial;
+        left: initial;
+        flex: none;
+    }
+    .bubbleHolder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top: 90%;
+        transform: translate(-50%, -90%);
+    }
+    .bubbleFadeClass {
+        animation: 4s ease-in bubbleFadeAnim forwards;
+    }
+}
