@@ -36,7 +36,7 @@ p {
     align-items: center
 }
 .contact:hover {
-    bottom: 0px;
+    cursor: pointer;
 }
 .contact-text {
     font-family: 'Gothic A1';
@@ -58,6 +58,10 @@ p {
 .contact-link {
     text-decoration: none;
     color: black;
+    font-weight: bold;
+}
+.contact-link:hover {
+    text-decoration: underline;
 }
 h1 {
     font-family:'Gothic A1';
@@ -66,7 +70,8 @@ header {
     padding: 0px;
     margin: .75em;
     position: relative;
-    font-size: 28pt;
+    font-size: 30pt;
+    font-family: 'Gothic A1';
 }
 header a {
     text-decoration: none;
