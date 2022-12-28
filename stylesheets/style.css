@@ -9,9 +9,6 @@
     --main-img-height-sm: 300px;
     --main-img-width-sm: 200px;
 }
-p {
-    margin-block: .5em;
-}
 .wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
@@ -27,7 +24,7 @@ p {
 .contact {
     color: black;
     position: fixed;
-    bottom: -60px;
+    bottom: -50px;
     transition: all .5s ease-in;
     flex: none;
     margin: auto;
@@ -41,7 +38,7 @@ p {
 .contact-text {
     font-family: 'Gothic A1';
     background-color: rgb(240, 232, 217);
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px 5px 0px 0px;
     margin: 0px;
     width: fit-content;
@@ -68,10 +65,10 @@ h1 {
 }
 header {
     padding: 0px;
-    margin: .75em;
     position: relative;
     font-size: 30pt;
     font-family: 'Gothic A1';
+    height: 100px;
 }
 header a {
     text-decoration: none;
@@ -184,10 +181,18 @@ footer {
 .navbar a:visited {
     color: white;
 }
+p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .navbar {
+    margin-top: 20px;
     font-size: 18pt;
     width: 100%;
-    height: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -207,7 +212,6 @@ footer {
 @media screen and (max-height: 700px) {
     header {
         font-size: 23pt;
-        margin: .5em;
     }
     .navbar {
         font-size: 15pt;

@@ -35,8 +35,8 @@
 .bubbleHolder {
     position: absolute;
     left: 50%;
-    top: 55%;
-    transform: translate(-50%, -55%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: calc(var(--normal-size) * 2 + var(--normal-size) / 5);
     height: calc(var(--normal-size) * 2 + var(--normal-size) / 5);
 }
@@ -96,8 +96,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        top: 100%;
-        transform: translate(-50%, -100%);
     }
     .bubbleFadeClass {
         animation: 4s ease-in bubbleFadeAnim forwards;
