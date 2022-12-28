@@ -70,13 +70,27 @@
     right: 0px;
 }
 @media screen and (max-width: 550px), (max-height: 650px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header {
+        flex: none;
+    }
+    footer {
+        flex: none;
+    }
     .bubbleDiv {
         width: var(--small-size);
         height: var(--small-size);
     }
     .bubbleHolder {
-        height: calc(var(--small-size) * 2 + var(--small-size) / 5);
+        margin-top: 20px;
+        flex: none;
         width: calc(var(--small-size) * 2 + var(--small-size) / 5);
+        height: calc(var(--small-size) * 2 + var(--small-size) / 5);
     }
 }
 @media screen and (max-height: 450px) {
