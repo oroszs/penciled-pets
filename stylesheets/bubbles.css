@@ -1,4 +1,5 @@
 :root {
+    --bubble-margin: 50px;
     --normal-size: 200px;
     --small-size: 125px;
 }
@@ -37,8 +38,13 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: calc(var(--normal-size) * 2 + var(--normal-size) / 5);
-    height: calc(var(--normal-size) * 2 + var(--normal-size) / 5);
+    width: calc((var(--normal-size) * 4) + (var(--bubble-margin) * 3));
+    height: calc((var(--normal-size) * 2) + var(--bubble-margin));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .bubbleFadeClass {
     animation: 4s ease-in bubbleFadeAnim forwards;
@@ -57,17 +63,37 @@
         opacity: 0%;
     }
 }
-.top {
-    top: 0px;
+.quad {
+    flex: none;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px rgb(0, 229, 255);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0%;
+    transition: .5s all;
+    width: var(--normal-size);
+    height: var(--normal-size);
 }
-.bottom {
-    bottom: 0px;
+@media screen and (max-width: 950px) {
+    .bubbleHolder {
+        width: calc(var(--normal-size) * 3 + var(--bubble-margin) * 2);
+    }
+    .quad-7, .quad-6 {
+        display: none;
+    }
 }
-.left {
-    left: 0px;
-}
-.right {
-    right: 0px;
+@media screen and (max-width: 700px) {
+    .bubbleHolder {
+        width: calc(var(--normal-size) * 2 + var(--bubble-margin));
+    }
+    .quad-5, .quad-4 {
+        display: none;
+    }
 }
 @media screen and (max-width: 550px), (max-height: 650px) {
     .wrapper {
@@ -82,7 +108,7 @@
     footer {
         flex: none;
     }
-    .bubbleDiv {
+    .quad {
         width: var(--small-size);
         height: var(--small-size);
     }
@@ -94,16 +120,8 @@
     }
 }
 @media screen and (max-height: 450px) {
-    .right {
+    .quad-7, .quad-6, .quad-5, .quad-4, .quad-3, .quad-2, .quad-1 {
         display: none;
-    }
-    .bottom {
-        display: none;
-    }
-    .top, .left{
-        top: initial;
-        left: initial;
-        flex: none;
     }
     .bubbleHolder {
         display: flex;
