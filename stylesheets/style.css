@@ -69,6 +69,7 @@ header {
     font-size: 30pt;
     font-family: 'Gothic A1';
     height: 100px;
+    width: 100%;
 }
 header a {
     text-decoration: none;

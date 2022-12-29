@@ -41,7 +41,7 @@
     height: calc(var(--normal-size) * 2 + var(--normal-size) / 5);
 }
 .bubbleFadeClass {
-    animation: 6s ease-in bubbleFadeAnim forwards;
+    animation: 4s ease-in bubbleFadeAnim forwards;
 }
 @keyframes bubbleFadeAnim {
     0% {
@@ -112,6 +112,6 @@
         flex-direction: column;
     }
     .bubbleFadeClass {
-        animation: 4s ease-in bubbleFadeAnim forwards;
+        animation: 5s ease-in bubbleFadeAnim forwards;
     }
 }
