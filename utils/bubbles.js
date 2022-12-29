@@ -19,7 +19,7 @@ const init = () => {
             let imgIndex = Math.floor(Math.random() * tempImgArray.length);
             let imgObjArr = tempImgArray.splice(imgIndex, 1);
             bubbles++;
-            if(bubbles >= startingBubbles) intervalTime = 1000;
+            if(bubbles >= startingBubbles) intervalTime = 750;
             if(tempImgArray.length === 0) tempImgArray = imgObjArray.slice();
             createBubble(imgObjArr[0], quad);
         }
