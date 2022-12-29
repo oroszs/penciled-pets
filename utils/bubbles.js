@@ -5,64 +5,43 @@ window.onload = () => {
 
 const init = () => {
     let intervalTime = 0;
-    let availableQuadrants = [0, 1, 2, 3];
-    let bubbleWrapper = document.querySelector('.bubbleHolder');
     let tempImgArray = imgObjArray.slice();
     let numStartingBubbles = 1;
     let bubbles = 0;
-    const tryToCreateBubble = (startingBubbles, bubbles, tempImgArray, wrap, availableQuadrants) => {
-        let quadIndex = Math.floor(Math.random() * availableQuadrants.length);
-        let quadArr = availableQuadrants.splice(availableQuadrants.indexOf(quadIndex), 1);
+    const tryToCreateBubble = (startingBubbles, bubbles, tempImgArray) => {
+        let availArray = Array.from(document.querySelectorAll('.available'));
+        let visibleAvailableQuadrants = availArray.filter(quadrant => window.getComputedStyle(quadrant).display !== 'none');
+        let quadIndex = Math.floor(Math.random() * visibleAvailableQuadrants.length);
+        let quadArr = visibleAvailableQuadrants.splice(quadIndex, 1);
         let quad = quadArr[0];
-        if(quad >= 0){
+        if(quad) {
+            quad.classList.remove('available');
             let imgIndex = Math.floor(Math.random() * tempImgArray.length);
             let imgObjArr = tempImgArray.splice(imgIndex, 1);
             bubbles++;
-            if(bubbles >= startingBubbles) intervalTime = 2000;
+            if(bubbles >= startingBubbles) intervalTime = 1000;
             if(tempImgArray.length === 0) tempImgArray = imgObjArray.slice();
-            createBubble(imgObjArr[0], wrap, quad, availableQuadrants);
+            createBubble(imgObjArr[0], quad);
         }
-        setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, tempImgArray, bubbleWrapper, availableQuadrants);
+        setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, tempImgArray);
     }
-    setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, tempImgArray, bubbleWrapper, availableQuadrants);
+    setTimeout(tryToCreateBubble, intervalTime, numStartingBubbles, bubbles, tempImgArray);
 }
-const createBubble = (imgObj, wrapper, quad, quads) => {
-    let bubble = document.createElement('div');
-    bubble.className += 'bubbleDiv';
-    bubble.dataset.quad = `${quad}`;
-    let classString = getBubbleLocation(quad);
-    bubble.className += ` ${classString}`;
-    let imgEl = document.createElement('img');
-    imgEl.src = imgObj.src;
+const createBubble = (imgObj, quad) => {
+    let el = quad.firstChild;
+    el.src = imgObj.src;
     if(imgObj.orientation === 'portrait') {
-        imgEl.classList.add('portraitImg')
+        if(el.classList.contains('landscapeImg')) el.classList.remove('landscapeImg');
+        if(!el.classList.contains('portraitImg')) el.classList.add('portraitImg');
     } else {
-        imgEl.classList.add('landscapeImg');
+        if(el.classList.contains('portraitImg')) el.classList.remove('portraitImg');
+        if(!el.classList.contains('landscapeImg')) el.classList.add('landscapeImg');
     }
-    imgEl.classList.add('bubbleImg');
-    bubble.appendChild(imgEl);
-    wrapper.appendChild(bubble);
-    bubble.className += ` bubbleFadeClass`;
-    bubble.onanimationend = () => {
-        quads.push(parseInt(bubble.dataset.quad));
-        bubble.remove();
+    quad.classList.add('bubbleFadeClass');
+    quad.onanimationend = () => {
+        quad.firstChild.src = '';
+        quad.classList.add('available');
+        quad.classList.remove('bubbleFadeClass');
+        void quad.offsetWidth;
     }
-}
-const getBubbleLocation = (quad) => {
-    let classString = '';
-    switch (quad) {
-        case 0:
-            classString = 'top left';
-        break;
-        case 1:
-            classString = 'top right';
-        break;
-        case 2:
-            classString = 'bottom left';
-        break;
-        case 3:
-            classString = 'bottom right';
-        break;
-    }
-    return classString;
 }
