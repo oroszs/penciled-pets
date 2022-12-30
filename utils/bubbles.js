@@ -19,7 +19,7 @@ const init = () => {
             let imgIndex = Math.floor(Math.random() * tempImgArray.length);
             let imgObjArr = tempImgArray.splice(imgIndex, 1);
             bubbles++;
-            if(bubbles >= startingBubbles) intervalTime = 750;
+            if(bubbles >= startingBubbles) intervalTime = getIntervalTime();
             if(tempImgArray.length === 0) tempImgArray = imgObjArray.slice();
             createBubble(imgObjArr[0], quad);
         }
@@ -44,4 +44,26 @@ const createBubble = (imgObj, quad) => {
         quad.classList.remove('bubbleFadeClass');
         void quad.offsetWidth;
     }
+}
+const getIntervalTime = () => {
+    let totalQuads = Array.from(document.querySelectorAll('.quad'));
+    let visibleQuads = totalQuads.filter(quad => window.getComputedStyle(quad).display !== 'none');
+    switch(visibleQuads.length) {
+        case 8:
+            intTime = 750;
+        break;
+        case 6:
+            intTime = 1000;
+        break;
+        case 4:
+            intTime = 2000;
+        break;
+        case 1:
+            intTime = 1500;
+        break;
+        default:
+            intTime = 1000;
+        break;
+    }
+    return intTime;
 }
