@@ -50,7 +50,7 @@ const getIntervalTime = () => {
     let visibleQuads = totalQuads.filter(quad => window.getComputedStyle(quad).display !== 'none');
     switch(visibleQuads.length) {
         case 8:
-            intTime = 750;
+            intTime = 1000;
         break;
         case 6:
             intTime = 1000;
