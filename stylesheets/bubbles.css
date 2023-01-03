@@ -112,16 +112,15 @@
     }
 }
 @media screen and (max-height: 450px) {
-    .quad-7, .quad-6, .quad-5, .quad-4, .quad-3, .quad-2, .quad-1 {
+    .quad-7, .quad-6, .quad-5, .quad-4, .quad-3 {
         display: none;
     }
     .bubbleHolder {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        width: calc(var(--small-size) * 3 + var(--small-size) / 2);
+        height: calc(var(--small-size) + var(--small-size) / 3);
     }
     .bubbleFadeClass {
-        animation: 5s ease-in bubbleFadeAnim forwards;
+        animation: 6s ease-in bubbleFadeAnim forwards;
     }
 }
