@@ -1,11 +1,6 @@
 :root {
     box-sizing: border-box;
-    --scrollbar-color: rgb(0, 0, 0);
     --accent-color: rgb(144, 207, 115);
-    --main-img-height: 350px;
-    --main-img-width: 255px;
-    --main-img-height-sm: 300px;
-    --main-img-width-sm: 200px;
 }
 .wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -58,9 +53,6 @@
 .contact-link:hover {
     text-decoration: underline;
 }
-h1 {
-    font-family:'Gothic A1';
-}
 header {
     padding: 0px;
     position: relative;
@@ -75,59 +67,6 @@ header a {
 }
 header a:visited {
     color: black;
-}
-#mainImgDiv {
-    overflow: hidden;
-    width: var(--main-img-width);
-    height: calc(var(--main-img-height - 5));
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color :black;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px white;
-}
-#main-img {
-    width: auto;
-    height: var(--main-img-height);    
-}
-#imgScrollDiv {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: black;
-    border-radius: 5px;
-    overflow: hidden;
-    scroll-behavior: smooth;
-}
-#scrollDivHolder {
-    width: 950px;
-    height: 100px;
-    margin: 20px;
-}
-.scroll-div {
-    overflow: hidden;
-    height: 75px;
-    width: 75px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    border-radius: 5px;
-    scroll-margin-inline-start: 10px;
-    scroll-margin-inline-end: 10px;
-}
-.scroll-img {
-    flex: none;
-    width: auto;
-    height: 100px;
 }
 footer {
     position: absolute;
@@ -165,16 +104,6 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-.main {
-    display: flex;
-    position: relative;
-    width: 1000px;
-    height: 600px;
-    flex: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 @media screen and (max-height: 700px) {
     header {
         font-size: 23pt;
@@ -184,40 +113,11 @@ p {
     }
 }
 @media screen and (max-width: 1100px) {
-    .main {
-        width: 600px;
-    }
-    #scrollDivHolder {
-        width: 570px;
-    }
     .wrapper {
         background: linear-gradient(to left, var(--bg-side-color), var(--bg-mid-color) 30% 70%, var(--bg-side-color));
     }
 }
 @media screen and (max-width: 700px) {
-    .main {
-        width: 300px;
-    }
-    #mainImgDiv {
-        width: var(--main-img-wdht-sm);
-        height: calc(var(--main-img-height-sm - 5));
-    }
-    #main-img {
-        width: auto;
-        height: var(--main-img-height-sm);
-    }
-    #left-anchor-arrow {
-        display: none;
-    }
-    #right-anchor-arrow {
-        display: none;
-    }
-    #scrollDivHolder {
-        width: 285px;
-    }
-    #imgScrollDiv {
-        overflow-x: auto;
-    }
     @media screen and (max-width: 550px) {
         header {
             width: 100%;

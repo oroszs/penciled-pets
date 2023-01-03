@@ -1,9 +1,9 @@
 window.onload = () => {
-    init();
+    bubblesInit();
     setup();
 }
 
-const init = () => {
+const bubblesInit = () => {
     let intervalTime = 0;
     let tempImgArray = imgObjArray.slice();
     let numStartingBubbles = 1;
