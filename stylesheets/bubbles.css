@@ -104,8 +104,8 @@
     .bubbleHolder {
         margin-top: 20px;
         flex: none;
-        width: calc(var(--small-size) * 2 + var(--small-size) / 5);
-        height: calc(var(--small-size) * 2 + var(--small-size) / 5);
+        width: calc(var(--small-size) * 2 + var(--small-size) / 3);
+        height: calc(var(--small-size) * 2 + var(--small-size) / 3);
     }
     .quad-7, .quad-6, .quad-5, .quad-4 {
         display: none;
