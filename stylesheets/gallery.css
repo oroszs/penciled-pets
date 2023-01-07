@@ -1,2 +1,38 @@
-.img-holder {
+:root {
+    --gallery-bg: rgba(209, 255, 160, 0.703);
+}
+#img-holder {
+    width: 100%;
+    height: auto;
+    background-color: var(--gallery-bg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin: auto;
+    overflow-y: auto;
+}
+.gallery-img-landscape {
+    width: 100%;
+    height: auto;
+    flex: none;
+}
+.gallery-img-portrait {
+    width: auto;
+    height: 100%;
+    flex: none;
+}
+.gallery-img-div {
+    flex: none;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }
