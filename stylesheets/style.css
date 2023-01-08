@@ -88,6 +88,7 @@ footer {
     align-items: center;
     background-color: var(--accent-color);
     padding: 10px;
+    z-index: 10;
 }
 .navbar a {
     text-decoration: none;
@@ -106,6 +107,7 @@ p {
 @media screen and (max-height: 700px) {
     header {
         font-size: 23pt;
+        height: 77.6px;
     }
     .navbar {
         font-size: 15pt;

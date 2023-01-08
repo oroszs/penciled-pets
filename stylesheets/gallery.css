@@ -1,5 +1,7 @@
 :root {
     --gallery-bg: rgba(209, 255, 160, 0.703);
+    --lg-img: 200px;
+    --sml-img: 100px;
 }
 #img-holder {
     width: 100%;
@@ -11,7 +13,6 @@
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
-    margin: auto;
     overflow-y: auto;
 }
 .gallery-img-landscape {
@@ -26,8 +27,6 @@
 }
 .gallery-img-div {
     flex: none;
-    width: 200px;
-    height: 200px;
     margin: 20px;
     overflow: hidden;
     display: flex;
@@ -35,4 +34,26 @@
     justify-content: center;
     align-items: center;
     background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.portrait-div {
+    width: auto;
+    height: var(--lg-img);
+}
+.landscape-div {
+    width: var(--lg-img);
+    height: auto;
+}
+@media screen and (max-width: 500px) {
+    .portrait-div {
+        height: var(--sml-img);
+    }
+    .landscape-div{
+        width: var(--sml-img);
+    }
+    .gallery-img-div {
+        margin: 10px;
+        padding: 5px;
+    }
 }
