@@ -4,6 +4,8 @@
     --sml-img: 100px;
 }
 #img-holder {
+    padding-top: 30px;
+    padding-bottom: 50px;
     width: 100%;
     height: auto;
     background-color: var(--gallery-bg);
@@ -48,8 +50,10 @@
 @media screen and (max-width: 500px) {
     .portrait-div {
         height: var(--sml-img);
+        width: auto;
     }
     .landscape-div{
+        height: auto;
         width: var(--sml-img);
     }
     .gallery-img-div {
