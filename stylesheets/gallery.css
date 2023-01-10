@@ -41,6 +41,11 @@
     border-radius: 10px;
     max-width: max-content;
     flex-shrink: 0;
+    opacity: 0;
+    transition: all 1s;
+}
+.fadeIn {
+    opacity: 1;
 }
 .portrait-div {
     width: auto;

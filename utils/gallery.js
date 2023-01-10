@@ -19,5 +19,8 @@ const galleryInit = () => {
         }
         divEl.appendChild(imgEl);
         imgHolder.appendChild(divEl);
+        imgEl.onload = () => {
+            divEl.classList.add('fadeIn');
+        }
     });
 }
