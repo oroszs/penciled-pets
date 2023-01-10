@@ -24,10 +24,12 @@
 .gallery-img-landscape {
     width: 100%;
     height: auto;
+    min-height: 50%;
 }
 .gallery-img-portrait {
     width: auto;
     height: 100%;
+    min-width: 50%;
 }
 .gallery-img-div {
     flex: none;
