@@ -39,7 +39,7 @@
     background-color: white;
     padding: 10px;
     border-radius: 10px;
-    max-width: max-content;
+    flex-shrink: 0;
 }
 .portrait-div {
     width: auto;
