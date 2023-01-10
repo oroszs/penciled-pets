@@ -19,8 +19,14 @@
 }
 .gallery-img {
     flex: none;
-    width: 100%;
+}
+.gallery-img-portrait {
     height: 100%;
+    width: auto;
+}
+.gallery-img-landscape {
+    height: auto;
+    width: 100%;
 }
 .gallery-img-div {
     flex: none;
