@@ -11,10 +11,8 @@ const galleryInit = () => {
         imgEl.src = obj.src;
         imgEl.classList.add('gallery-img');
         if(obj.orientation === 'landscape') {
-            imgEl.classList.add('gallery-img-landscape');
             divEl.classList.add('landscape-div');
         } else {
-            imgEl.classList.add('gallery-img-portrait');
             divEl.classList.add('portrait-div');
         }
         divEl.appendChild(imgEl);
