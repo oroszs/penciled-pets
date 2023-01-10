@@ -17,15 +17,18 @@
     position: relative;
     overflow-y: auto;
 }
+.gallery-img {
+    flex: none;
+    flex-shrink: 0;
+    object-fit: contain;
+}
 .gallery-img-landscape {
     width: 100%;
     height: auto;
-    flex: none;
 }
 .gallery-img-portrait {
     width: auto;
     height: 100%;
-    flex: none;
 }
 .gallery-img-div {
     flex: none;

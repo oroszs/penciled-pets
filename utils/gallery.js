@@ -9,6 +9,7 @@ const galleryInit = () => {
         divEl.classList.add('gallery-img-div');
         let imgEl = document.createElement('img');
         imgEl.src = obj.src;
+        imgEl.classList.add('gallery-img');
         if(obj.orientation === 'landscape') {
             imgEl.classList.add('gallery-img-landscape');
             divEl.classList.add('landscape-div');
