@@ -19,8 +19,7 @@
 }
 .gallery-img {
     flex: none;
-    flex-shrink: 0;
-    object-fit: contain;
+    align-self: center;
 }
 .gallery-img-landscape {
     width: 100%;
