@@ -15,8 +15,10 @@ const galleryInit = () => {
         } else {
             divEl.classList.add('portrait-div');
         }
+        let wrap = document.createElement('div');
+        wrap.appendChild(divEl);
         divEl.appendChild(imgEl);
-        imgHolder.appendChild(divEl);
+        imgHolder.appendChild(wrap);
         imgEl.onload = () => {
             divEl.classList.add('fadeIn');
         }
