@@ -59,7 +59,7 @@ const getIntervalTime = () => {
             intTime = 2000;
         break;
         case 3:
-            intTime = 2000;
+            intTime = 2500;
         break;
         case 1:
             intTime = 1500;

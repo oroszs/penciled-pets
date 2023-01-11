@@ -1,7 +1,9 @@
 :root {
     --gallery-bg: rgba(209, 255, 160, 0.703);
-    --lg-img: 200px;
-    --sml-img: 100px;
+    --lg-port: 150px;
+    --lg-land: 200px;
+    --sml-port: 75px;
+    --sml-land: 100px;
 }
 #img-holder {
     padding-top: 30px;
@@ -19,13 +21,6 @@
 }
 .gallery-img {
     flex: none;
-}
-.gallery-img-portrait {
-    height: 0;
-    min-height: 100%;
-    width: auto;
-}
-.gallery-img-landscape {
     height: auto;
     width: 100%;
 }
@@ -49,21 +44,21 @@
     opacity: 1;
 }
 .portrait-div {
-    width: auto;
-    height: var(--lg-img);
+    width: var(--lg-port);
+    height: auto;
 }
 .landscape-div {
-    width: var(--lg-img);
+    width: var(--lg-land);
     height: auto;
 }
 @media screen and (max-width: 500px) {
     .portrait-div {
-        height: var(--sml-img);
-        width: auto;
+        height: auto;
+        width: var(--sml-port);
     }
     .landscape-div{
         height: auto;
-        width: var(--sml-img);
+        width: var(--sml-land);
     }
     .gallery-img-div {
         margin: 10px;
