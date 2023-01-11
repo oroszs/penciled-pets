@@ -23,6 +23,7 @@
     flex: none;
     height: auto;
     width: 100%;
+    align-self: center;
 }
 .gallery-img-div {
     flex: none;
