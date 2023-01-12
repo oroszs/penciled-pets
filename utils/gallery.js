@@ -16,6 +16,7 @@ const galleryInit = () => {
             divEl.classList.add('portrait-div');
         }
         let wrap = document.createElement('div');
+        wrap.classList.add('div-wrap');
         wrap.appendChild(imgEl);
         divEl.appendChild(wrap);
         imgHolder.appendChild(divEl);
