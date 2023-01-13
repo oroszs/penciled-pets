@@ -79,6 +79,10 @@
     flex: none;
     z-index: 22;
 }
+.div-wrap {
+    width: fit-content;
+    height: fit-content;
+}
 @media screen and (max-width: 500px) {
     .portrait-div {
         height: auto;

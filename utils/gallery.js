@@ -17,7 +17,7 @@ const galleryInit = () => {
         }
         let wrap = document.createElement('div');
         wrap.classList.add('div-wrap');
-        wrap.onclick = () => {
+        divEl.onclick = () => {
             let wrapper = document.querySelector('.wrapper');
             let modalBg = document.createElement('div');
             modalBg.classList.add('modal-bg');
