@@ -27,6 +27,7 @@
     display: block;
 }
 .gallery-img-div {
+    cursor: pointer;
     flex: none;
     margin: 20px;
     overflow: hidden;
