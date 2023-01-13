@@ -24,6 +24,7 @@
     flex: none;
     height: 100%;
     width: 100%;
+    display: block;
 }
 .gallery-img-div {
     flex: none;
@@ -78,10 +79,6 @@
 .modal-img {
     flex: none;
     z-index: 22;
-}
-.div-wrap {
-    width: fit-content;
-    height: fit-content;
 }
 @media screen and (max-width: 500px) {
     .portrait-div {
