@@ -1,5 +1,6 @@
 :root {
     --gallery-bg: rgba(209, 255, 160, 0.703);
+    --gallery-accent-color: rgb(0,0,0);
     --lg-port: 150px;
     --lg-land: 200px;
     --sml-port: 75px;
@@ -26,7 +27,7 @@
     width: 100%;
     display: block;
 }
-.gallery-img-div {
+.gallery-img-button {
     cursor: pointer;
     flex: none;
     margin: 20px;
@@ -40,15 +41,18 @@
     transition: all 1s;
     background-color: white;
     padding: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 5px 5px 5px var(--accent-color);
 }
 .fadeIn {
     opacity: 1;
 }
-.portrait-div {
+.portrait {
     width: var(--lg-port);
     height: auto;
 }
-.landscape-div {
+.landscape {
     width: var(--lg-land);
     height: auto;
 }
@@ -76,21 +80,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.modal-x {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.90);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 23;
+    cursor: pointer;
+    transition: .5s all;
+}
+.modal-x:hover {
+    background-color: lightcoral;
 }
 .modal-img {
     flex: none;
     z-index: 22;
 }
 @media screen and (max-width: 500px) {
-    .portrait-div {
+    .portrait {
         height: auto;
         width: var(--sml-port);
     }
-    .landscape-div{
+    .landscape{
         height: auto;
         width: var(--sml-land);
     }
-    .gallery-img-div {
+    .gallery-img-button {
         margin: 10px;
         padding: 5px;
         border-radius: 5px;
@@ -100,22 +124,30 @@
     }
 }
 @media screen and (orientation: landscape) {
+    .modal-holder {
+        width: auto;
+        height: 80%;
+    }
     .modal-img-portrait {
-        height: 80vh;
+        height: 100%;
         width: auto;
     }
     .modal-img-landscape {
-        height: 80vh;
+        height: 100%;
         width: auto;
     }
 }
 @media screen and (orientation: portrait) {
+    .modal-holder {
+        width: 80%;
+        height: auto;
+    }
     .modal-img-portrait {
         height: auto;
-        width: 80vw;
+        width: 100%;
     }
     .modal-img-landscape {
         height: auto;
-        width: 80vw;
+        width: 100%;
     }
 }

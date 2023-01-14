@@ -5,24 +5,31 @@ window.onload = () => {
 const galleryInit = () => {
     const imgHolder = document.querySelector('#img-holder');
     imgObjArray.forEach(obj => {
-        let divEl = document.createElement('div');
-        divEl.classList.add('gallery-img-div');
+        let butEl = document.createElement('button');
+        butEl.classList.add('gallery-img-button');
         let imgEl = document.createElement('img');
         imgEl.src = obj.src;
         imgEl.classList.add('gallery-img');
         if(obj.orientation === 'landscape') {
-            divEl.classList.add('landscape-div');
+            butEl.classList.add('landscape');
         } else {
-            divEl.classList.add('portrait-div');
+            butEl.classList.add('portrait');
         }
         let wrap = document.createElement('div');
         wrap.classList.add('div-wrap');
-        divEl.onclick = () => {
+        butEl.onclick = () => {
             let wrapper = document.querySelector('.wrapper');
             let modalBg = document.createElement('div');
             modalBg.classList.add('modal-bg');
             let modalHolder = document.createElement('div');
             modalHolder.classList.add('modal-holder');
+            let modalX = document.createElement('div');
+            modalX.classList.add('modal-x');
+            let xIcon = document.createElement('i');
+            xIcon.classList.add('fa-solid');
+            xIcon.classList.add('fa-xmark');
+            xIcon.classList.add('fa-2x');
+            modalX.appendChild(xIcon);
             let modalImg = document.createElement('img');
             modalImg.classList.add('modal-img');
             modalImg.src = obj.src;
@@ -31,6 +38,7 @@ const galleryInit = () => {
             } else {
                 modalImg.classList.add('modal-img-landscape');
             }
+            modalHolder.appendChild(modalX);
             modalHolder.appendChild(modalImg);
             modalBg.appendChild(modalHolder);
             wrapper.appendChild(modalBg);
@@ -38,10 +46,10 @@ const galleryInit = () => {
             modalHolder.onclick = () => modalBg.remove();
         }
         wrap.appendChild(imgEl);
-        divEl.appendChild(wrap);
-        imgHolder.appendChild(divEl);
+        butEl.appendChild(wrap);
+        imgHolder.appendChild(butEl);
         imgEl.onload = () => {
-            divEl.classList.add('fadeIn');
+            butEl.classList.add('fadeIn');
         }
     });
 }
