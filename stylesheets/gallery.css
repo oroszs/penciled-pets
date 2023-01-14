@@ -127,7 +127,7 @@
 @media screen and (orientation: landscape) {
     .modal-holder {
         width: auto;
-        height: 80%;
+        max-height: 80%;
     }
     .modal-img {
         height: 100%;
@@ -136,7 +136,7 @@
 }
 @media screen and (orientation: portrait) {
     .modal-holder {
-        width: 80%;
+        max-width: 80%;
         height: auto;
     }
     .modal-img {
