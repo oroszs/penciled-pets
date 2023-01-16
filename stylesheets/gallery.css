@@ -73,10 +73,6 @@
 }
 .modal-holder {
     flex: none;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 50px black;
     z-index: 21;
     display: flex;
     flex-direction: column;
@@ -86,8 +82,8 @@
 }
 .modal-x {
     position: absolute;
-    right: -10px;
-    top: -10px;
+    right: -15px;
+    top: -40px;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -107,6 +103,10 @@
     flex: none;
     z-index: 22;
     transform: translateZ(0);
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 50px black;
 }
 @media screen and (max-width: 500px) {
     .portrait {
@@ -122,27 +122,30 @@
         padding: 5px;
         border-radius: 5px;
     }
-    .modal-holder {
-        padding: 10px;
-    }
 }
 @media screen and (orientation: landscape) {
     .modal-holder {
         width: fit-content;
-        max-height: 70%;
+        max-height: 60%;
     }
     .modal-img {
         height: 100%;
         width: auto;
+        object-fit: contain;
     }
 }
 @media screen and (orientation: portrait) {
     .modal-holder {
-        max-width: 70%;
+        max-width: 60%;
         height: fit-content;
     }
     .modal-img {
         height: auto;
         width: 100%;
+        object-fit: contain;
+    }
+    .modal-x {
+        right: -35px;
+        top: -15px;
     }
 }
