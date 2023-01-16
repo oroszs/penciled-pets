@@ -126,6 +126,11 @@
         padding: 10px;
     }
 }
+@media screen and (max-height: 500px) {
+    .modal-img {
+        padding: 10px;
+    }
+}
 @media screen and (orientation: landscape) {
     .modal-holder {
         width: fit-content;
