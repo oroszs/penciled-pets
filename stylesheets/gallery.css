@@ -129,7 +129,7 @@
 @media screen and (orientation: landscape) {
     .modal-holder {
         width: fit-content;
-        max-height: 60%;
+        max-height: 70%;
     }
     .modal-img {
         height: 100%;
