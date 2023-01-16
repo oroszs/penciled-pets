@@ -139,7 +139,7 @@
 }
 @media screen and (orientation: portrait) {
     .modal-holder {
-        max-width: 60%;
+        max-width: 75%;
         height: fit-content;
     }
     .modal-img {
@@ -148,7 +148,7 @@
         object-fit: contain;
     }
     .modal-x {
-        right: -35px;
-        top: -15px;
+        right: -30px;
+        top: -20px;
     }
 }
