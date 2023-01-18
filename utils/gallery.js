@@ -1,5 +1,6 @@
 window.onload = () => {
     galleryInit();
+    galleryControlsInit();
     setup();
 }
 const galleryInit = () => {
@@ -52,4 +53,6 @@ const galleryInit = () => {
             butEl.classList.add('fadeIn');
         }
     });
+}
+const galleryControlsInit = () => {
 }

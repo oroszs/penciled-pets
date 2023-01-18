@@ -49,6 +49,12 @@
     justify-content: center;
     align-items: center;
 }
+.hidden-button {
+    display: none;
+}
+.revealed-button {
+    display: block;
+}
 .gallery-img {
     flex: none;
     height: 100%;
