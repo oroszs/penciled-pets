@@ -55,4 +55,17 @@ const galleryInit = () => {
     });
 }
 const galleryControlsInit = () => {
+    const holders = Array.from(document.querySelectorAll('.button-holder'));
+    holders.forEach(holder => {
+        holder.onclick = () => {
+            const holderChildren = holder.children;
+            console.log(typeof holderChildren);
+            for(child of holderChildren) {
+                if(child.classList.contains('hidden-button')) {
+                    child.classList.remove('hidden-button');
+                    child.classList.add('revealed-button');
+                }
+            };
+        }
+    });
 }
