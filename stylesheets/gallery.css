@@ -6,8 +6,10 @@
     --sml-port: 75px;
     --sml-land: 100px;
     --modal-bg-color: rgba(0, 0, 0, 0.75);
-    --control-bg-color: rgba(132, 255, 0, 0.703);
-    --control-button-color: rgba(74, 144, 0, 0.496);
+    --control-bg-color: rgb(86, 165, 255);
+    --control-button-color: rgb(0, 255, 251);
+    --current-button-color: rgb(0, 255, 170);
+    --selected-button-color: rgba(74, 74, 74, 0.5);
 }
 #img-holder {
     padding-top: 50px;
@@ -23,17 +25,21 @@
     position: relative;
     overflow-y: auto;
 }
+.current-button {
+    background-color: var(--current-button-color);
+}
+.selected-button {
+    background-color: var(--selected-button-color);
+}
 #control-holder {
     width: 150px;
     height: 50px;
-    background-color: var(--control-bg-color);
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: absolute;
     right: 25px;
     top: 120px;
-    border-radius: 5px;
     z-index: 10;
 }
 .button-holder {
@@ -42,18 +48,24 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color: var(--control-bg-color);
+    border-radius: 5px;
+    height: fit-content;
+    margin: 5px;
 }
 .control-button {
     width: 30px;
     height: 30px;
     flex: none;
-    background-color: var(--control-button-color);
     border-radius: 5px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.unselected-button {
+    background-color: var(--control-button-color);
 }
 .hidden-button {
     display: none;

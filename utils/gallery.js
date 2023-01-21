@@ -60,10 +60,7 @@ const galleryControlsInit = () => {
         holder.onclick = () => {
             const holderChildren = holder.children;
             for(child of holderChildren) {
-                if(child.classList.contains('hidden-button')) {
-                    child.classList.remove('hidden-button');
-                    child.classList.add('revealed-button');
-                }
+                child.classList.toggle('revealed-button');
             };
         }
     });
