@@ -161,6 +161,9 @@
     box-shadow: 0px 0px 50px black;
 }
 @media screen and (max-width: 500px) {
+    #control-holder {
+        top: 85px;
+    }
     .portrait {
         height: auto;
         width: var(--sml-port);
