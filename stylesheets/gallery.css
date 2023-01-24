@@ -43,14 +43,14 @@
     z-index: 10;
 }
 .button-holder {
-    transition: 1s all ease-in-out;
+    transition: .5s all ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: var(--control-bg-color);
     border-radius: 5px;
-    height: fit-content;
+    height: 50px;
     margin: 5px;
 }
 .control-button {

@@ -59,9 +59,21 @@ const galleryControlsInit = () => {
     holders.forEach(holder => {
         holder.onclick = () => {
             const holderChildren = holder.children;
-            for(child of holderChildren) {
-                child.classList.toggle('revealed-button');
-            };
+            if(window.getComputedStyle(holder).height === '50px'){
+                const holderKeys = Object.keys(holderChildren);
+                const divHeight = holderKeys.length * 50;
+                holder.style.height = `${divHeight}px`;
+                setTimeout(function() {
+                    for(child of holderChildren) {
+                        child.classList.toggle('revealed-button');
+                    };
+                }, 500);
+            } else {
+                holder.style.height = '50px';
+                for(child of holderChildren) {
+                    child.classList.toggle('revealed-button');
+                };
+            }
         }
     });
 }
