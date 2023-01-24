@@ -7,8 +7,10 @@
     --modal-bg-color: rgba(0, 0, 0, 0.75);
     --control-bg-color: rgb(86, 165, 255);
     --control-button-color: rgb(0, 255, 251);
-    --current-button-color: rgb(0, 255, 0);
+    --current-button-color: rgb(0, 62, 0);
     --selected-button-color: rgba(74, 74, 74, 0.5);
+    --button-size: 30px;
+    --button-margin: 10px;
 }
 #img-holder {
     padding-top: 50px;
@@ -26,19 +28,18 @@
 }
 .current-button {
     background-color: var(--current-button-color);
+    color: white;
 }
 .selected-button {
     background-color: var(--selected-button-color);
 }
 #control-holder {
-    width: 150px;
-    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: absolute;
-    right: 25px;
-    top: 120px;
+    right: 10px;
+    top: 110px;
     z-index: 10;
 }
 .button-holder {
@@ -49,30 +50,33 @@
     align-items: center;
     background-color: var(--accent-color);
     border-radius: 5px;
-    height: 50px;
+    height: calc(var(--button-size) + (var(--button-margin) * 2));
     margin: 5px;
+    overflow: hidden;
+}
+#size-holder.revealed {
+    height: calc((var(--button-size) + (var(--button-margin) * 2)) * 4);
+}
+#medium-holder.revealed {
+    height: calc((var(--button-size) + (var(--button-margin) * 2)) * 5);
+}
+#subject-holder.revealed {
+    height: calc((var(--button-size) + (var(--button-margin) * 2)) * 6);
 }
 .control-button {
-    width: 30px;
-    height: 30px;
+    width: var(--button-size);
+    height: var(--button-size);
     flex: none;
     border-radius: 5px;
-    margin: 10px;
+    margin: var(--button-margin);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: .5s all ease-in-out;
     cursor: pointer;
 }
 .unselected-button {
     background-color: var(--gallery-bg);
-}
-.hidden-button {
-    display: none;
-}
-.revealed-button {
-    display: flex;
 }
 .gallery-img {
     flex: none;
@@ -163,7 +167,8 @@
 }
 @media screen and (max-width: 500px) {
     #control-holder {
-        top: 85px;
+        top: 95px;
+        font-size: 8pt;
     }
     .portrait {
         height: auto;
@@ -180,6 +185,15 @@
     }
     .modal-img {
         padding: 10px;
+    }
+    :root {
+        --button-size: 20px;
+        --button-margin: 5px;
+    }
+}
+@media screen and (max-height: 700px) and (min-width: 500px) {
+    #control-holder {
+        top: 90px;
     }
 }
 @media screen and (max-height: 500px) {

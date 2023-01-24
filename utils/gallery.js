@@ -58,26 +58,7 @@ const galleryControlsInit = () => {
     const holders = Array.from(document.querySelectorAll('.button-holder'));
     holders.forEach(holder => {
         holder.onclick = () => {
-            const holderChildren = holder.children;
-            if(window.getComputedStyle(holder).height === '50px'){
-                const holderKeys = Object.keys(holderChildren);
-                const divHeight = holderKeys.length * 50;
-                holder.style.height = `${divHeight}px`;
-                setTimeout(function() {
-                    for(child of holderChildren) {
-                        if(!child.classList.contains('current-button')){
-                            child.classList.toggle('revealed-button');
-                        }
-                    };
-                }, 500);
-            } else {
-                for(child of holderChildren) {
-                    if(!child.classList.contains('current-button')){
-                        holder.style.height = '50px';
-                        child.classList.toggle('revealed-button');
-                    }
-                };
-            }
+            holder.classList.toggle('revealed');
         }
     });
 }
