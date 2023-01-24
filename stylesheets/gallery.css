@@ -1,6 +1,5 @@
 :root {
     --gallery-bg: rgba(209, 255, 160, 0.703);
-    --gallery-accent-color: rgb(0,0,0);
     --lg-port: 150px;
     --lg-land: 200px;
     --sml-port: 75px;
@@ -8,7 +7,7 @@
     --modal-bg-color: rgba(0, 0, 0, 0.75);
     --control-bg-color: rgb(86, 165, 255);
     --control-button-color: rgb(0, 255, 251);
-    --current-button-color: rgb(0, 255, 170);
+    --current-button-color: rgb(0, 255, 0);
     --selected-button-color: rgba(74, 74, 74, 0.5);
 }
 #img-holder {
@@ -48,7 +47,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--control-bg-color);
+    background-color: var(--accent-color);
     border-radius: 5px;
     height: 50px;
     margin: 5px;
@@ -63,9 +62,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: .5s all ease-in-out;
+    cursor: pointer;
 }
 .unselected-button {
-    background-color: var(--control-button-color);
+    background-color: var(--gallery-bg);
 }
 .hidden-button {
     display: none;

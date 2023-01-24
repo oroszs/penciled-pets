@@ -65,13 +65,17 @@ const galleryControlsInit = () => {
                 holder.style.height = `${divHeight}px`;
                 setTimeout(function() {
                     for(child of holderChildren) {
-                        child.classList.toggle('revealed-button');
+                        if(!child.classList.contains('current-button')){
+                            child.classList.toggle('revealed-button');
+                        }
                     };
                 }, 500);
             } else {
-                holder.style.height = '50px';
                 for(child of holderChildren) {
-                    child.classList.toggle('revealed-button');
+                    if(!child.classList.contains('current-button')){
+                        holder.style.height = '50px';
+                        child.classList.toggle('revealed-button');
+                    }
                 };
             }
         }
