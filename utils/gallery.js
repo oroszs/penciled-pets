@@ -1,10 +1,10 @@
 window.onload = () => {
     galleryInit();
-    galleryControlsInit();
     setup();
 }
 const galleryInit = () => {
     populateGallery('medium');
+    galleryControlsInit();
 }
 const galleryControlsInit = () => {
     const holders = Array.from(document.querySelectorAll('.button-holder'));
@@ -17,19 +17,18 @@ const galleryControlsInit = () => {
     const smlButton = document.querySelector('#sml-size-button');
     const medButton = document.querySelector('#med-size-button');
     const lgButton = document.querySelector('#lg-size-button');
-    smlButton.onclick = changeSize(smlButton, 'small');
-    medButton.onclick = changeSize(medButton, 'medium');
-    lgButton.onclick = changeSize(lgButton, 'large');
+    smlButton.onclick = ()=> changeSize(smlButton, 'small');
+    medButton.onclick = ()=> changeSize(medButton, 'medium');
+    lgButton.onclick = ()=> changeSize(lgButton, 'large');
 }
 const changeSize = (button, newSize) => {
-    console.log('size changed');
     if(!button.classList.contains('current-button') && !button.classList.contains('selected-button')) {
         const imgHolder = document.querySelector('#img-holder');
         const currentButton = document.querySelector('.current-button');
         if(currentButton.dataset.size === 'large') {
             currentButton.classList.remove('fa-lg');
         } else if (currentButton.dataset.size==='small') {
-            currentButton.classList.remove('fa-xs')
+            currentButton.classList.remove('fa-xs');
         }
         const selectedButton = document.querySelector('.selected-button');
         selectedButton.classList.remove('selected-button');
@@ -61,7 +60,6 @@ const changeSize = (button, newSize) => {
     }
 }
 const populateGallery = (size) => {
-    console.log(size);
     const imgHolder = document.querySelector('#img-holder');
     imgObjArray.forEach(obj => {
         let butEl = document.createElement('button');
@@ -76,6 +74,7 @@ const populateGallery = (size) => {
                 } else {
                     butEl.classList.add('small-portrait');
                 }
+                butEl.classList.add('small-gallery-img-button');
                 break;
             case 'medium':
                 if(obj.orientation === 'landscape') {
@@ -97,7 +96,6 @@ const populateGallery = (size) => {
                 } else {
                     butEl.classList.add('medium-portrait');
                 }
-                break;
         }
         let wrap = document.createElement('div');
         wrap.classList.add('div-wrap');
@@ -112,7 +110,7 @@ const populateGallery = (size) => {
 }
 const addModal = (buttonElement, imgSrc, imgOrientation) => {
     buttonElement.onclick = () => {
-        let wrapper = document.querySelector('.wrapper');
+        let wrapper = document.querySelector('.gallery-wrapper');
         let modalBg = document.createElement('div');
         modalBg.classList.add('modal-bg');
         let modalHolder = document.createElement('div');

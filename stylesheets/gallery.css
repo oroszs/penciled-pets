@@ -1,13 +1,21 @@
 :root {
     --gallery-bg: rgba(209, 255, 160, 0.703);
     --lg-port: 300px;
+    --lg-port-h: 330px;
     --lg-land: 400px;
+    --lg-land-h: 430px;
     --med-port: 150px;
+    --med-port-h: 170px;
     --med-land: 200px;
-    --sml-port: 75px;
-    --sml-land: 100px;
-    --xsml-port: 50px;
-    --xsml-land: 75px;
+    --med-land-h: 220px;
+    --sml-port: 85px;
+    --sml-port-h: 95px;
+    --sml-land: 110px;
+    --sml-land-h: 120px;
+    --xsml-port: 60px;
+    --xsml-port-h: 70px;
+    --xsml-land: 85px;
+    --xsml-land-h: 95px;
     --modal-bg-color: rgba(0, 0, 0, 0.75);
     --control-bg-color: rgb(86, 165, 255);
     --control-button-color: rgb(0, 255, 251);
@@ -16,12 +24,21 @@
     --button-size: 30px;
     --button-margin: 10px;
 }
+.gallery-wrapper {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: black;
+    position: absolute;
+    background-color: var(--gallery-bg);
+    width: 100%;
+    height: fit-content;
+    min-height: 100%;
+}
 #img-holder {
     padding-top: 50px;
     padding-bottom: 50px;
     width: 100%;
     height: auto;
-    background-color: var(--gallery-bg);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -99,12 +116,18 @@
     align-items: center;
     border-radius: 10px;
     opacity: 0;
-    transition: all 1s;
+    transition: all 1s ease-in-out;
     background-color: white;
     padding: 10px;
     outline: none;
     border: none;
     box-shadow: 5px 5px 5px var(--accent-color);
+}
+.small-gallery-img-button {
+    padding: 5px;
+}
+.gallery-img-button:hover {
+    box-shadow: 10px 10px 10px var(--accent-color);
 }
 .fadeIn {
     opacity: 1;
@@ -113,24 +136,48 @@
     width: var(--lg-port);
     height: auto;
 }
+.large-portrait:hover {
+    width: var(--lg-port-h);
+    height: auto;
+}
 .large-landscape {
     width: var(--lg-land);
+    height: auto;
+}
+.large-landscape:hover {
+    width: var(--lg-land-h);
     height: auto;
 }
 .medium-portrait {
     width: var(--med-port);
     height: auto;
 }
+.medium-portrait:hover {
+    width: var(--med-port-h);
+    height: auto;
+}
 .medium-landscape {
     width: var(--med-land);
+    height: auto;
+}
+.medium-landscape:hover {
+    width: var(--med-land-h);
     height: auto;
 }
 .small-portrait {
     width: var(--sml-port);
     height: auto;
 }
+.small-portrait:hover {
+    width: var(--sml-port-h);
+    height: auto;
+}
 .small-landscape {
     width: var(--sml-land);
+    height: auto;
+}
+.small-landscape:hover {
+    width: var(--sml-land-h);
     height: auto;
 }
 .modal-bg {
@@ -194,24 +241,48 @@
         width: var(--med-port);
         height: auto;
     }
+    .large-portrait:hover {
+        width: var(--med-port-h);
+        height: auto;
+    }
     .large-landscape {
         width: var(--med-land);
+        height: auto;
+    }
+    .large-landscape:hover {
+        width: var(--med-land-h);
         height: auto;
     }
     .medium-portrait {
         width: var(--sml-port);
         height: auto;
     }
+    .medium-portrait:hover {
+        width:var(--sml-port-h);
+        height: auto;
+    }
     .medium-landscape {
         width: var(--sml-land);
+        height: auto;
+    }
+    .medium-landscape:hover {
+        width: var(--sml-land-h);
         height: auto;
     }
     .small-portrait {
         width: var(--xsml-port);
         height: auto;
     }
+    .small-portrait:hover {
+        width: var(--xsml-port-h);
+        height: auto;
+    }
     .small-landscape {
         width: var(--xsml-land);
+        height: auto;
+    }
+    .small-landscape:hover {
+        width: var(--xsml-land-h);
         height: auto;
     }
     .gallery-img-button {
@@ -225,6 +296,10 @@
     :root {
         --button-size: 20px;
         --button-margin: 5px;
+    }
+    #img-holder {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 @media screen and (max-height: 700px) and (min-width: 500px) {

@@ -1,8 +1,9 @@
 :root {
+    --gallery-bg: rgba(209, 255, 160, 0.703);
     --bubble-margin: 50px;
     --normal-size: 200px;
     --small-size: 125px;
-    --bubble-shadow-color: rgb(113, 113, 113);
+    --bubble-shadow-color: rgb(71, 71, 71);
 }
 .bubbleImg {
     position: relative;
@@ -100,6 +101,7 @@
     .quad {
         width: var(--small-size);
         height: var(--small-size);
+        box-shadow: 7px 7px 7px var(--bubble-shadow-color);
     }
     .bubbleHolder {
         margin-top: 20px;
