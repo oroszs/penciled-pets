@@ -117,7 +117,6 @@
     align-items: center;
     border-radius: 10px;
     opacity: 0;
-    transition: all 1s ease-in-out;
     background-color: white;
     padding: 10px;
     outline: none;
@@ -127,9 +126,6 @@
 .small-gallery-img-button {
     padding: 5px;
 }
-.gallery-img-button:hover {
-    box-shadow: 10px 10px 10px var(--accent-color);
-}
 .fadeIn {
     opacity: 1;
 }
@@ -137,48 +133,24 @@
     width: var(--lg-port);
     height: auto;
 }
-.large-portrait:hover {
-    width: var(--lg-port-h);
-    height: auto;
-}
 .large-landscape {
     width: var(--lg-land);
-    height: auto;
-}
-.large-landscape:hover {
-    width: var(--lg-land-h);
     height: auto;
 }
 .medium-portrait {
     width: var(--med-port);
     height: auto;
 }
-.medium-portrait:hover {
-    width: var(--med-port-h);
-    height: auto;
-}
 .medium-landscape {
     width: var(--med-land);
-    height: auto;
-}
-.medium-landscape:hover {
-    width: var(--med-land-h);
     height: auto;
 }
 .small-portrait {
     width: var(--sml-port);
     height: auto;
 }
-.small-portrait:hover {
-    width: var(--sml-port-h);
-    height: auto;
-}
 .small-landscape {
     width: var(--sml-land);
-    height: auto;
-}
-.small-landscape:hover {
-    width: var(--sml-land-h);
     height: auto;
 }
 .modal-bg {
@@ -221,9 +193,6 @@
     cursor: pointer;
     transition: .5s all;
 }
-.modal-x:hover {
-    background-color: lightcoral;
-}
 .modal-img {
     flex: none;
     z-index: 22;
@@ -234,6 +203,15 @@
     box-shadow: 0px 0px 50px black;
 }
 @media screen and (max-width: 500px) {
+    .gallery-img-button {
+        transition: all 1s ease-in-out;
+    }
+    .modal-x:hover {
+        background-color: lightcoral;
+    }
+    .gallery-img-button:hover {
+        box-shadow: 10px 10px 10px var(--accent-color);
+    }
     #control-holder {
         top: 95px;
         font-size: 8pt;
@@ -242,48 +220,24 @@
         width: var(--med-port);
         height: auto;
     }
-    .large-portrait:hover {
-        width: var(--med-port-h);
-        height: auto;
-    }
     .large-landscape {
         width: var(--med-land);
-        height: auto;
-    }
-    .large-landscape:hover {
-        width: var(--med-land-h);
         height: auto;
     }
     .medium-portrait {
         width: var(--sml-port);
         height: auto;
     }
-    .medium-portrait:hover {
-        width:var(--sml-port-h);
-        height: auto;
-    }
     .medium-landscape {
         width: var(--sml-land);
-        height: auto;
-    }
-    .medium-landscape:hover {
-        width: var(--sml-land-h);
         height: auto;
     }
     .small-portrait {
         width: var(--xsml-port);
         height: auto;
     }
-    .small-portrait:hover {
-        width: var(--xsml-port-h);
-        height: auto;
-    }
     .small-landscape {
         width: var(--xsml-land);
-        height: auto;
-    }
-    .small-landscape:hover {
-        width: var(--xsml-land-h);
         height: auto;
     }
     .gallery-img-button {
@@ -301,6 +255,32 @@
     #img-holder {
         padding-left: 10px;
         padding-right: 10px;
+    }
+}
+@media screen and (min-width: 500px) {
+    .large-portrait:hover {
+        width: var(--lg-port-h);
+        height: auto;
+    }
+    .large-landscape:hover {
+        width: var(--lg-land-h);
+        height: auto;
+    }
+    .medium-portrait:hover {
+        width: var(--med-port-h);
+        height: auto;
+    }
+    .medium-landscape:hover {
+        width: var(--med-land-h);
+        height: auto;
+    }
+    .small-portrait:hover {
+        width: var(--sml-port-h);
+        height: auto;
+    }
+    .small-landscape:hover {
+        width: var(--sml-land-h);
+        height: auto;
     }
 }
 @media screen and (max-height: 700px) and (min-width: 500px) {

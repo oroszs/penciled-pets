@@ -17,14 +17,9 @@ const galleryControlsInit = () => {
     const smlButton = document.querySelector('#sml-size-button');
     const medButton = document.querySelector('#med-size-button');
     const lgButton = document.querySelector('#lg-size-button');
-    const allMedButton = document.querySelector('#all-mediums-button');
-    const waterMedButton = document.querySelector('#watercolor-mediums-button');
-    const penMedButton = document.querySelector('#pen-mediums-button');
-    const digiMedButton = document.querySelector('#digital-mediums-button');
     smlButton.onclick = ()=> changeSize(smlButton, 'small');
     medButton.onclick = ()=> changeSize(medButton, 'medium');
     lgButton.onclick = ()=> changeSize(lgButton, 'large');
-    
 }
 const changeSize = (button, newSize) => {
     if(!button.classList.contains('current-button') && !button.classList.contains('selected-button')) {
