@@ -33,10 +33,14 @@
     width: 100%;
     height: fit-content;
     min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #img-holder {
     box-sizing: border-box;
-    padding-top: 50px;
+    padding-top: 150px;
     padding-bottom: 50px;
     padding-left: 10px;
     padding-right: 10px;
@@ -50,6 +54,12 @@
     position: relative;
     overflow-y: auto;
     font-size: 30pt;
+}
+.text-holder {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .current-button {
     background-color: var(--current-button-color);

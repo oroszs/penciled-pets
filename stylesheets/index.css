@@ -6,6 +6,11 @@
 body {
     margin: 0px;
 }
+body::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 .wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
@@ -59,11 +64,12 @@ body {
 }
 header {
     padding: 0px;
-    position: relative;
     font-size: 30pt;
     font-family: 'Gothic A1';
     height: 100px;
     width: 100%;
+    position: absolute;
+    top: 0px;
 }
 header a {
     text-decoration: none;
@@ -83,7 +89,7 @@ footer {
 }
 .navbar {
     box-sizing: border-box;
-    margin-top: 10px;
+    top: 50px;
     font-size: 18pt;
     width: 100%;
     display: flex;
@@ -93,7 +99,7 @@ footer {
     background-color: var(--accent-color);
     padding: 10px;
     z-index: 10;
-    position: relative;
+    position: absolute;
 }
 .navbar a {
     text-decoration: none;
