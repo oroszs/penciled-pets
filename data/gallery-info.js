@@ -1,5 +1,5 @@
 const galleryDataObj = {
     size: 'medium',
-    mediums: 'all',
-    subjects: 'all',
+    medium: 'all',
+    subject: 'all',
 }

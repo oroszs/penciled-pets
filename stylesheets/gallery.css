@@ -203,9 +203,6 @@
     box-shadow: 0px 0px 50px black;
 }
 @media screen and (max-width: 500px) {
-    .gallery-img-button {
-        transition: all 1s ease-in-out;
-    }
     .modal-x:hover {
         background-color: lightcoral;
     }
@@ -258,6 +255,9 @@
     }
 }
 @media screen and (min-width: 500px) {
+    .gallery-img-button {
+        transition: all 1s ease-in-out;
+    }
     .large-portrait:hover {
         width: var(--lg-port-h);
         height: auto;

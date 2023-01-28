@@ -3,7 +3,7 @@ window.onload = () => {
     setup();
 }
 const galleryInit = () => {
-    populateGallery('medium');
+    populateGallery();
     galleryControlsInit();
 }
 const galleryControlsInit = () => {
@@ -14,74 +14,82 @@ const galleryControlsInit = () => {
             holder.classList.toggle('revealed');
         }
     });
-    const smlButton = document.querySelector('#sml-size-button');
-    const medButton = document.querySelector('#med-size-button');
-    const lgButton = document.querySelector('#lg-size-button');
-    const allMedButton = document.querySelector('#all-mediums-button');
-    const waterMedButton = document.querySelector('#watercolor-mediums-button');
-    const penMedButton = document.querySelector('#pen-mediums-button');
-    const digiMedButton = document.querySelector('#digital-mediums-button');
-    smlButton.onclick = ()=> changeSize(smlButton, 'small');
-    medButton.onclick = ()=> changeSize(medButton, 'medium');
-    lgButton.onclick = ()=> changeSize(lgButton, 'large');
-    allMedButton.onclick = () => changeMedium(allMedButton, 'all');
-    waterMedButton.onclick = () => changeMedium(waterMedButton, 'watercolor');
-    penMedButton.onclick = () => changeMedium(penMedButton, 'pen');
-    digiMedButton.onclick = () => changeMedium(digiMedButton, 'digital');
-    
+    const controlButtons = Array.from(document.querySelectorAll('.control-button'));
+    controlButtons.forEach(control => {
+        control.onclick = () => changeGallery();
+    });
 }
-const changeSize = (button, newSize) => {
+const changeGallery = (e) => {
+    const button = e.currentTarget;
     if(!button.classList.contains('current-button') && !button.classList.contains('selected-button')) {
         const imgHolder = document.querySelector('#img-holder');
         const currentButton = document.querySelector('.current-button');
-        if(currentButton.dataset.size === 'large') {
-            currentButton.classList.remove('fa-lg');
-        } else if (currentButton.dataset.size==='small') {
-            currentButton.classList.remove('fa-xs');
-        }
+        currentButton.textContent = '';
         const selectedButton = document.querySelector('.selected-button');
         selectedButton.classList.remove('selected-button');
         selectedButton.classList.add('unselected-button');
+        button.classList.remove('unselected-button');
+        button.classList.add('selected-button');
         while(imgHolder.firstChild) {
             imgHolder.removeChild(imgHolder.lastChild);
         }
-        switch (newSize) {
+        currentButton.dataset.type = button.dataset.type;
+        const iconEl = document.createElement('i');
+        iconEl.classList.add('fa-solid');
+        switch (button.dataset.type) {
             case 'large':
-                currentButton.dataset.size = 'large';
-                currentButton.classList.add('fa-lg');
-                populateGallery('large');
+                iconEl.classList.add('fa-square');
+                iconEl.classList.add('fa-lg');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.size = 'large';
             break;
             case 'medium':
-                currentButton.dataset.size = 'medium';
-                populateGallery('medium');
+                iconEl.classList.add('fa-square');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.size = 'medium';
             break;
             case 'small':
-                currentButton.dataset.size = 'small';
-                currentButton.classList.add('fa-xs');
-                populateGallery('small');
+                iconEl.classList.add('fa-square');
+                iconEl.classList.add('fa-xs');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.size = 'small';
+            break;
+            case 'all-mediums':
+                currentButton.textContent = 'All';
+                galleryDataObj.medium = 'all';
+            break;
+            case 'watercolor':
+                iconEl.classList.add('fa-paintbrush');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.medium = 'watercolor';
+            break;
+            case 'pen':
+                iconEl.classList.add('fa-pen-nib');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.medium = 'pen';
+            break;
+            case 'digital':
+                iconEl.classList.add('fa-pen-to-square');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.medium = 'digital';
             break;
             default:
-                populateGallery('medium');
             break;
         }
-        button.classList.remove('unselected-button');
-        button.classList.add('selected-button');
+        populateGallery();
     }
 }
-const changeMedium = (button, medium) => {
-    if(!button.classList.contains('current-button') && !button.classList.contains('selected-button')) {
-        
-    }
-}
-const populateGallery = (size) => {
+const populateGallery = () => {
     const imgHolder = document.querySelector('#img-holder');
-    imgObjArray.forEach(obj => {
+    const mediumFilteredArray = imgObjArray.filter(obj => {return (obj.type===galleryDataObj.medium) || (galleryDataObj.medium==='all')});
+    const subjectAndMediumFilteredArray = mediumFilteredArray.filter(obj => {return (obj.type===galleryDataObj.subject) || (galleryDataObj.subject==='all')});
+    subjectAndMediumFilteredArray.forEach(obj => {
         let butEl = document.createElement('button');
         butEl.classList.add('gallery-img-button');
         let imgEl = document.createElement('img');
         imgEl.src = obj.src;
         imgEl.classList.add('gallery-img');
-        switch (size) {
+        switch (galleryDataObj.size) {
             case 'small':
                 if(obj.orientation === 'landscape') {
                     butEl.classList.add('small-landscape');
