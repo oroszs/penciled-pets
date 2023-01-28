@@ -38,6 +38,8 @@
     box-sizing: border-box;
     padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
     height: auto;
     display: flex;
@@ -47,6 +49,7 @@
     flex-wrap: wrap;
     position: relative;
     overflow-y: auto;
+    font-size: 30pt;
 }
 .current-button {
     background-color: var(--current-button-color);
@@ -250,8 +253,7 @@
         --button-margin: 5px;
     }
     #img-holder {
-        padding-left: 10px;
-        padding-right: 10px;
+        font-size: 20pt;
     }
 }
 @media screen and (min-width: 500px) {

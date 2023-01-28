@@ -3,7 +3,7 @@ window.onload = () => {
     setup();
 }
 const galleryInit = () => {
-    populateGallery('medium');
+    populateGallery();
     galleryControlsInit();
 }
 const galleryControlsInit = () => {
@@ -14,60 +14,108 @@ const galleryControlsInit = () => {
             holder.classList.toggle('revealed');
         }
     });
-    const smlButton = document.querySelector('#sml-size-button');
-    const medButton = document.querySelector('#med-size-button');
-    const lgButton = document.querySelector('#lg-size-button');
-    smlButton.onclick = ()=> changeSize(smlButton, 'small');
-    medButton.onclick = ()=> changeSize(medButton, 'medium');
-    lgButton.onclick = ()=> changeSize(lgButton, 'large');
+    const controlButtons = Array.from(document.querySelectorAll('.control-button'));
+    controlButtons.forEach(control => {
+        control.onclick = (e) => changeGallery(e);
+    });
 }
-const changeSize = (button, newSize) => {
+const changeGallery = (e) => {
+    const button = e.currentTarget;
     if(!button.classList.contains('current-button') && !button.classList.contains('selected-button')) {
         const imgHolder = document.querySelector('#img-holder');
-        const currentButton = document.querySelector('.current-button');
-        if(currentButton.dataset.size === 'large') {
-            currentButton.classList.remove('fa-lg');
-        } else if (currentButton.dataset.size==='small') {
-            currentButton.classList.remove('fa-xs');
-        }
-        const selectedButton = document.querySelector('.selected-button');
+        const currentButton = button.parentNode.querySelector('.current-button');
+        currentButton.textContent = '';
+        const selectedButton = button.parentNode.querySelector('.selected-button');
         selectedButton.classList.remove('selected-button');
         selectedButton.classList.add('unselected-button');
+        button.classList.remove('unselected-button');
+        button.classList.add('selected-button');
         while(imgHolder.firstChild) {
             imgHolder.removeChild(imgHolder.lastChild);
         }
-        switch (newSize) {
+        imgHolder.textContent = '';
+        currentButton.dataset.type = button.dataset.type;
+        const iconEl = document.createElement('i');
+        iconEl.classList.add('fa-solid');
+        switch (button.dataset.type) {
             case 'large':
-                currentButton.dataset.size = 'large';
-                currentButton.classList.add('fa-lg');
-                populateGallery('large');
+                iconEl.classList.add('fa-square');
+                iconEl.classList.add('fa-lg');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.size = 'large';
             break;
             case 'medium':
-                currentButton.dataset.size = 'medium';
-                populateGallery('medium');
+                iconEl.classList.add('fa-square');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.size = 'medium';
             break;
             case 'small':
-                currentButton.dataset.size = 'small';
-                currentButton.classList.add('fa-xs');
-                populateGallery('small');
+                iconEl.classList.add('fa-square');
+                iconEl.classList.add('fa-xs');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.size = 'small';
+            break;
+            case 'all-mediums':
+                currentButton.textContent = 'All';
+                galleryDataObj.medium = 'all';
+            break;
+            case 'watercolor':
+                iconEl.classList.add('fa-paintbrush');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.medium = 'watercolor';
+            break;
+            case 'pencil':
+                iconEl.classList.add('fa-pencil');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.medium = 'pencil';
+            break;
+            case 'digital':
+                iconEl.classList.add('fa-pen-to-square');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.medium = 'digital';
+            break;
+            case 'all-subjects':
+                currentButton.textContent = 'All';
+                galleryDataObj.subject = 'all';
+            break;
+            case 'person':
+                iconEl.classList.add('fa-person');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.subject = 'person';
+            break;
+            case 'dog':
+                iconEl.classList.add('fa-dog');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.subject = 'dog';
+            break;
+            case 'cat':
+                iconEl.classList.add('fa-cat');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.subject = 'cat';
+            break;
+            case 'house':
+                iconEl.classList.add('fa-house');
+                currentButton.appendChild(iconEl);
+                galleryDataObj.subject = 'house';
             break;
             default:
-                populateGallery('medium');
+                console.log('default!');
             break;
         }
-        button.classList.remove('unselected-button');
-        button.classList.add('selected-button');
+        populateGallery();
     }
 }
-const populateGallery = (size) => {
+const populateGallery = () => {
     const imgHolder = document.querySelector('#img-holder');
-    imgObjArray.forEach(obj => {
+    const mediumFilteredArray = imgObjArray.filter(obj => {return (obj.medium===galleryDataObj.medium) || (galleryDataObj.medium==='all')});
+    const subjectAndMediumFilteredArray = mediumFilteredArray.filter(obj => {return (obj.subject[0]===galleryDataObj.subject) || (obj.subject[1] === galleryDataObj.subject) || (galleryDataObj.subject==='all')});
+    subjectAndMediumFilteredArray.forEach(obj => {
         let butEl = document.createElement('button');
         butEl.classList.add('gallery-img-button');
         let imgEl = document.createElement('img');
         imgEl.src = obj.src;
         imgEl.classList.add('gallery-img');
-        switch (size) {
+        switch (galleryDataObj.size) {
             case 'small':
                 if(obj.orientation === 'landscape') {
                     butEl.classList.add('small-landscape');
@@ -107,6 +155,9 @@ const populateGallery = (size) => {
             butEl.classList.add('fadeIn');
         }
     });
+    if(subjectAndMediumFilteredArray.length === 0) {
+        imgHolder.textContent = 'No Results';
+    }
 }
 const addModal = (buttonElement, imgSrc, imgOrientation) => {
     buttonElement.onclick = () => {
