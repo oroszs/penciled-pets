@@ -24,6 +24,10 @@ const galleryControlsInit = () => {
     smlButton.onclick = ()=> changeSize(smlButton, 'small');
     medButton.onclick = ()=> changeSize(medButton, 'medium');
     lgButton.onclick = ()=> changeSize(lgButton, 'large');
+    allMedButton.onclick = () => changeMedium(allMedButton, 'all');
+    waterMedButton.onclick = () => changeMedium(waterMedButton, 'watercolor');
+    penMedButton.onclick = () => changeMedium(penMedButton, 'pen');
+    digiMedButton.onclick = () => changeMedium(digiMedButton, 'digital');
     
 }
 const changeSize = (button, newSize) => {
@@ -62,6 +66,11 @@ const changeSize = (button, newSize) => {
         }
         button.classList.remove('unselected-button');
         button.classList.add('selected-button');
+    }
+}
+const changeMedium = (button, medium) => {
+    if(!button.classList.contains('current-button') && !button.classList.contains('selected-button')) {
+        
     }
 }
 const populateGallery = (size) => {
