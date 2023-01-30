@@ -120,6 +120,7 @@
     display: block;
 }
 .gallery-img-button {
+    transition: all 1s ease-in-out;
     cursor: pointer;
     flex: none;
     margin: 20px;
@@ -219,9 +220,6 @@
     .modal-x:hover {
         background-color: lightcoral;
     }
-    .gallery-img-button:hover {
-        box-shadow: 10px 10px 10px var(--accent-color);
-    }
     #control-holder {
         top: 95px;
         font-size: 8pt;
@@ -267,8 +265,8 @@
     }
 }
 @media screen and (min-width: 500px) {
-    .gallery-img-button {
-        transition: all 1s ease-in-out;
+    .gallery-img-button:hover {
+        box-shadow: 10px 10px 10px var(--accent-color);
     }
     .large-portrait:hover {
         width: var(--lg-port-h);
@@ -297,12 +295,15 @@
 }
 @media screen and (max-height: 700px) and (min-width: 500px) {
     #control-holder {
-        top: 90px;
+        top: 110px;
     }
 }
 @media screen and (max-height: 500px) {
     .modal-img {
         padding: 10px;
+    }
+    :root {
+        --button-margin: 5px;
     }
 }
 @media screen and (orientation: landscape) {

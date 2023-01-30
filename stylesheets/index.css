@@ -63,6 +63,7 @@ body::-webkit-scrollbar {
     text-decoration: underline;
 }
 header {
+    background-color: white;
     padding: 0px;
     font-size: 30pt;
     font-family: 'Gothic A1';
@@ -89,7 +90,7 @@ footer {
 }
 .navbar {
     box-sizing: border-box;
-    top: 50px;
+    top: 55px;
     font-size: 18pt;
     width: 100%;
     display: flex;
