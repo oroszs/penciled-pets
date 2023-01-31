@@ -123,6 +123,7 @@ p {
     }
     .navbar {
         font-size: 15pt;
+        top: 45px;
     }
 }
 @media screen and (max-width: 550px) {
