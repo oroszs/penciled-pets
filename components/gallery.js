@@ -7,6 +7,8 @@ const galleryInit = () => {
     galleryControlsInit();
 }
 const galleryControlsInit = () => {
+    const wrap = document.querySelector('.gallery-wrapper');
+    wrap.onclick = (e) => hideHolders(e.currentTarget);
     const holders = Array.from(document.querySelectorAll('.button-holder'));
     holders.forEach(holder => {
         holder.onclick = (e) => {
@@ -22,6 +24,7 @@ const galleryControlsInit = () => {
 const changeGallery = (e) => {
     const button = e.currentTarget;
     if(!button.classList.contains('current-button') && !button.classList.contains('selected-button')) {
+        hideHolders(button);
         const imgHolder = document.querySelector('#img-holder');
         const currentButton = button.parentNode.querySelector('.current-button');
         currentButton.textContent = '';
@@ -104,6 +107,14 @@ const changeGallery = (e) => {
         }
         populateGallery();
     }
+}
+const hideHolders = (butt) => {
+    const revealedHolders = Array.from(document.querySelectorAll('.revealed'));
+    revealedHolders.forEach(holder => {
+        if(butt.parentNode !== holder){
+            holder.classList.remove('revealed');
+        }
+    });
 }
 const populateGallery = () => {
     const imgHolder = document.querySelector('#img-holder');
