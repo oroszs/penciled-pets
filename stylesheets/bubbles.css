@@ -1,6 +1,5 @@
 :root {
     --gallery-bg: rgba(209, 255, 160, 0.703);
-    --bubble-holder-bg: rgba(144, 207, 115, 0.373);
     --bubble-margin: 35px;
     --normal-size: 200px;
     --small-size: 125px;
@@ -33,7 +32,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--bubble-holder-bg);
+    background-color: var(--div-bg);
     padding: 10px;
     padding-left: 0px;
     padding-right: 0px;

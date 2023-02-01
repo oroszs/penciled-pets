@@ -2,6 +2,7 @@
     box-sizing: border-box;
     --accent-color: rgb(144, 207, 115);
     --gallery-bg: rgba(209, 255, 160, 0.703);
+    --div-bg: rgba(144, 207, 115, 0.373);
 }
 body {
     margin: 0px;
