@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 90%;
+    width: 100%;
     height: auto;
     min-height: 100px;
     flex: none;
@@ -36,17 +36,19 @@
     display: flex;
     box-sizing: border-box;
     margin: 50px;
+    margin-bottom: 0px;
 }
 .info-img-holder {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: auto;
     box-sizing: border-box;
-    margin-bottom: 75px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 .img-div {
     flex: none;
@@ -54,12 +56,15 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin: 30px;
+    box-sizing: border-box;
+    height: fit-content;
 }
 .subjects-div {
     height: 325px;
 }
 .mediums-div {
-    height: 400px;
+    height: 320px;
 }
 .border-div {
     background-color: white;
@@ -117,13 +122,25 @@ h3 {
     .subjects-div {
         height: 250px;
     }
+    .medium-landscape-border-div {
+        width: 300px;
+        height: auto;
+    }
+    .medium-portrait-border-div {
+        width: 150px;
+        height: auto;
+    }
+    .medium-square-border-div {
+        width: 200px;
+        height: auto;
+    }
 }
 @media screen and (max-width: 1100px) {
     .border-div {
         padding: 5px;
     }
     .mediums-div {
-        height: 250px;
+        height: 230px;
     }
     .info-paragraph {
         font-size: 12pt;
@@ -141,47 +158,47 @@ h3 {
         height: auto;
     }
     .subjects-div {
-        height: 175px;
+        height: 250px;
     }
-    .subject-landscape-border-div {
-        width: 100px;
-        height: auto;
-    }
-    .subject-portrait-border-div {
-        width: 50px;
-        height: auto;
+    .img-div {
+        margin: 20px;
     }
 }
 @media screen and (max-width: 700px) {
     .info-paragraph {
-        font-size: 8pt;
         margin: 15px;
     }
-    .info-img-holder {
-        flex-wrap: wrap;
-    }
     .mediums-div {
-        height: 125px;
-        margin-bottom: 10px;
+        height: 160px;
     }
     .subjects-div {
-        height: 125px;
-        margin-bottom: 10px;
+        height: 170px;
     }
     h3 {
         font-size: 10pt;
         margin-top: 10px;
     }
     .medium-landscape-border-div {
-        width: 100px;
+        width: 125px;
         height: auto;
     }
     .medium-portrait-border-div {
-        width: 50px;
+        width: 75px;
         height: auto;
     }
     .medium-square-border-div {
+        width: 90px;
+        height: auto;
+    }
+    .subject-landscape-border-div {
+        width: 125px;
+        height: auto;
+    }
+    .subject-portrait-border-div {
         width: 75px;
         height: auto;
+    }
+    .img-div {
+        margin: 10px;
     }
 }
