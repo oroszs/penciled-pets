@@ -87,7 +87,7 @@
         display: none;
     }
     .bubbleFadeClass {
-        animation: 6s ease-in bubbleFadeAnim forwards;
+        animation: 5.5s ease-in bubbleFadeAnim forwards;
     }
 }
 @media screen and (max-width: 550px), (max-height: 650px) {
@@ -128,6 +128,6 @@
         height: var(--small-size);
     }
     .bubbleFadeClass {
-        animation: 6s ease-in bubbleFadeAnim forwards;
+        animation: 5.5s ease-in bubbleFadeAnim forwards;
     }
 }
