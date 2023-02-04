@@ -101,6 +101,7 @@
     width: 100%;
     height: auto;
     flex: none;
+    display: block;
 }
 h3 {
     padding: 10px;
