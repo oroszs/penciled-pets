@@ -102,7 +102,7 @@ const changeGallery = (e) => {
                 galleryDataObj.subject = 'house';
             break;
             default:
-                console.log('default!');
+                alert('Error: Missing gallery filter');
             break;
         }
         populateGallery();
