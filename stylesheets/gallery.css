@@ -26,9 +26,10 @@
 }
 #gallery-title {
     text-decoration: none;
-    font-size: 30pt;
+    font-size: 18pt;
     color: black;
     text-align: center;
+    padding: 0px;
 }
 .gallery-wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
