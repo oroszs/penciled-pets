@@ -24,13 +24,6 @@
     --button-size: 30px;
     --button-margin: 10px;
 }
-#gallery-title {
-    text-decoration: none;
-    font-size: 18pt;
-    color: black;
-    text-align: center;
-    padding: 0px;
-}
 .gallery-wrapper {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;

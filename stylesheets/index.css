@@ -70,6 +70,7 @@ h1 {
     text-decoration: underline;
 }
 header {
+    z-index: 19;
     background-color: white;
     padding: 0px;
     font-size: 30pt;
