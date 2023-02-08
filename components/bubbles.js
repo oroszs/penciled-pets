@@ -1,6 +1,5 @@
 window.onload = () => {
     bubblesInit();
-    setup();
 }
 
 const bubblesInit = () => {

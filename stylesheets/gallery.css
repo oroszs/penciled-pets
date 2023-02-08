@@ -40,7 +40,7 @@
 }
 #img-holder {
     box-sizing: border-box;
-    padding-top: 150px;
+    padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 10px;
     padding-right: 10px;
@@ -221,7 +221,6 @@
         background-color: lightcoral;
     }
     #control-holder {
-        top: 95px;
         font-size: 8pt;
     }
     .large-portrait {
@@ -293,17 +292,9 @@
         height: auto;
     }
 }
-@media screen and (max-height: 700px) and (min-width: 500px) {
-    #control-holder {
-        top: 110px;
-    }
-}
 @media screen and (max-height: 500px) {
     .modal-img {
         padding: 10px;
-    }
-    :root {
-        --button-margin: 5px;
     }
 }
 @media screen and (orientation: landscape) {
