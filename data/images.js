@@ -178,5 +178,53 @@ const imgObjArray = [
         orientation:'portrait',
         medium:'digital',
         subject:['dog']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52677659653_8f82524c27_k.jpg',
+        orientation:'portrait',
+        medium:'watercolor',
+        subject:['cat']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52676651607_c922fe9e40_k.jpg',
+        orientation:'landscape',
+        medium:'watercolor',
+        subject:['dog']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52677449124_97079102ba_k.jpg',
+        orientation:'portrait',
+        medium:'watercolor',
+        subject:['dog']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52677601275_a99932f842_b.jpg',
+        orientation:'portrait',
+        medium:'digital',
+        subject:['dog']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52677449164_306927a389_z.jpg',
+        orientation:'landscape',
+        medium:'pencil',
+        subject:['dog', 'person']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52676652337_ec4c778bca_z.jpg',
+        orientation:'portrait',
+        medium:'pencil',
+        subject:['cat']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52676651917_009bac17b9_b.jpg',
+        orientation:'portrait',
+        medium:'watercolor',
+        subject:['dog']
+    },
+    {
+        src:'https://live.staticflickr.com/65535/52677165476_6243c5be8c_k.jpg',
+        orientation:'landscape',
+        medium:'watercolor',
+        subject:['dog']
     }
 ];
