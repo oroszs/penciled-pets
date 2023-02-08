@@ -38,6 +38,7 @@
     margin: 50px;
     margin-bottom: 0px;
     flex: none;
+    width: fit-content;
 }
 .info-img-holder {
     position: relative;
@@ -67,6 +68,9 @@
 .mediums-div {
     height: 400px;
 }
+.photo-div {
+    height: 220px;
+}
 .border-div {
     background-color: white;
     border-radius: 5px;
@@ -77,6 +81,10 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+}
+.photo-landscape-border-div {
+    width: 300px;
+    height: auto;
 }
 .medium-portrait-border-div {
     width: 200px;
@@ -112,6 +120,9 @@ h3 {
     margin-block: 0px;
     margin-top: 30px;
 }
+#photo-header {
+    margin-bottom: 50px;
+}
 @media screen and (max-width: 1400px) {
     .subject-landscape-border-div {
         width: 200px;
@@ -141,14 +152,8 @@ h3 {
     }
 }
 @media screen and (max-width: 1100px) {
-    .border-div {
-        padding: 5px;
-    }
     .mediums-div {
-        height: 235px;
-    }
-    .info-paragraph {
-        font-size: 12pt;
+        height: 245px;
     }
     .medium-landscape-border-div {
         width: 200px;
@@ -162,16 +167,21 @@ h3 {
         width: 150px;
         height: auto;
     }
-    .subjects-div {
-        height: 250px;
-    }
-    .img-div {
-        margin: 20px;
-    }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 780px) {
+    #photo-header {
+        margin: 0px 15px 50px 15px;
+    }
+    .photo-div {
+        height: 160px;
+    }
+    .photo-landscape-border-div {
+        width: 200px;
+        height: auto;
+    }
     .info-paragraph {
         margin: 15px;
+        font-size: 12pt;
     }
     .mediums-div {
         height: 185px;
@@ -204,5 +214,13 @@ h3 {
     }
     .img-div {
         margin: 10px;
+    }
+    .border-div {
+        padding: 5px;
+    }
+}
+@media screen and (max-width: 325px) {
+    .mediums-div {
+        height: 170px;
     }
 }
