@@ -38,9 +38,13 @@ h1 {
     color: black;
     text-decoration: none;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 16pt;
+    }
     .contact-paragraph {
         font-size: 10pt;
-        margin: 30px 0px 0px 0px;
+        margin: 15px 0px 15px 0px;
+        padding: 10px;
     }
 }
