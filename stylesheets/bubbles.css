@@ -127,7 +127,7 @@
     .bubbleHolder {
         display: flex;
         width: calc(var(--small-size) * 3 + var(--small-size) / 2);
-        height: var(--small-size);
+        height: calc(var(--small-size) + var(--small-size) / 3);
     }
     .bubbleFadeClass {
         animation: 5.5s ease-in bubbleFadeAnim forwards;

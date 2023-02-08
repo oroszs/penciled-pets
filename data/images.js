@@ -1,15 +1,25 @@
 const imgObjArray = [
     {
+        src:'https://live.staticflickr.com/65535/52578583975_c1aca70540_z.jpg',
+        orientation:'landscape',
+        medium:'pencil',
+        subject:['cat']
+    },
+    {
         src:'https://live.staticflickr.com/65535/52573679508_172503fd8f_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'50',
+        smallMarginTop:'30'
     },
     {
         src:'https://live.staticflickr.com/65535/52573679588_0b914c2f4a_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'45',
+        smallMarginTop:'27'
     },
     {
         src:'https://live.staticflickr.com/65535/52577680667_15f3347142_z.jpg',
@@ -27,7 +37,9 @@ const imgObjArray = [
         src:'https://live.staticflickr.com/65535/52578419399_9bebcf7d4b_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'75',
+        smallMarginTop:'45'
     },
     {
         src:'https://live.staticflickr.com/65535/52578419444_0d4f1c39d9_z.jpg',
@@ -69,7 +81,9 @@ const imgObjArray = [
         src:'https://live.staticflickr.com/65535/52577680757_f39ff37b68_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'10',
+        smallMarginTop:'6'
     },
     {
         src:'https://live.staticflickr.com/65535/52578419514_105c51bf6e_z.jpg',
@@ -93,25 +107,25 @@ const imgObjArray = [
         src:'https://live.staticflickr.com/65535/52578419559_7fccc35a9a_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'65',
+        smallMarginTop:'39'
     },
     {
         src:'https://live.staticflickr.com/65535/52577680907_c6c51b9f08_z.jpg',
         orientation:'portrait',
         medium:'pencil',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'40',
+        smallMarginTop:'24'
     },
     {
         src:'https://live.staticflickr.com/65535/52578145821_598e183257_z.jpg',
         orientation:'portrait',
         medium:'pencil',
-        subject:['dog']
-    },
-    {
-        src:'https://live.staticflickr.com/65535/52578583975_c1aca70540_z.jpg',
-        orientation:'landscape',
-        medium:'pencil',
-        subject:['cat']
+        subject:['dog'],
+        largeMarginTop:'40',
+        smallMarginTop:'24'
     },
     {
         src:'https://live.staticflickr.com/65535/52578419644_67977deb1f_z.jpg',
@@ -129,25 +143,33 @@ const imgObjArray = [
         src:'https://live.staticflickr.com/65535/52578419689_756338bacf_z.jpg',
         orientation:'landscape',
         medium:'watercolor',
-        subject:['cat']
+        subject:['cat'],
+        largeMarginRight:'95',
+        smallMarginRight:'57'
     },
     {
         src:'https://live.staticflickr.com/65535/52577681062_d09fa72f78_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'25',
+        smallMarginTop:'15'
     },
     {
         src:'https://live.staticflickr.com/65535/52578584110_855f09da27_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'50',
+        smallMarginTop:'30'
     },
     {
         src:'https://live.staticflickr.com/65535/52578146006_98f0da6b38_z.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'45',
+        smallMarginTop:'27'
     },
     {
         src:'https://live.staticflickr.com/65535/52578584130_28f21b7e04_z.jpg',
@@ -165,7 +187,9 @@ const imgObjArray = [
         src:'https://live.staticflickr.com/65535/52578146021_975d0e063f_z.jpg',
         orientation:'landscape',
         medium:'pencil',
-        subject:['person', 'dog']
+        subject:['person', 'dog'],
+        largeMarginRight:'20',
+        smallMarginRight:'12'
     },
     {
         src:'https://live.staticflickr.com/65535/52578672518_2c908c3ba4_z.jpg',
@@ -195,7 +219,9 @@ const imgObjArray = [
         src:'https://live.staticflickr.com/65535/52677449124_97079102ba_k.jpg',
         orientation:'portrait',
         medium:'watercolor',
-        subject:['dog']
+        subject:['dog'],
+        largeMarginTop:'20',
+        smallMarginTop:'12'
     },
     {
         src:'https://live.staticflickr.com/65535/52677601275_a99932f842_b.jpg',

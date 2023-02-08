@@ -41,5 +41,6 @@ h1 {
 @media screen and (max-width: 500px) {
     .contact-paragraph {
         font-size: 10pt;
+        margin: 30px 0px 0px 0px;
     }
 }
