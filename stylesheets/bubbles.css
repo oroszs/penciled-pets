@@ -26,7 +26,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .bubbleHolder {
@@ -120,8 +120,11 @@
         display: none;
     }
 }
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 500px) {
     .quad-7, .quad-6, .quad-5, .quad-4, .quad-3 {
+        display: none;
+    }
+    h3 {
         display: none;
     }
     .bubbleHolder {
