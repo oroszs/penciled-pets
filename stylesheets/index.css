@@ -74,6 +74,10 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+#contact-link {
+    text-decoration: none;
+    color: black;
+}
 @media screen and (max-width: 500px) {
     .navbar {
         font-size: 16pt;
