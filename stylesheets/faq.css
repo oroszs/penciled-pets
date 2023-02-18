@@ -24,6 +24,20 @@
     min-height: 100px;
     flex: none;
 }
+.faq-button {
+    all: unset;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--div-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+}
+h4 {
+    margin-block: 0px;
+}
+.faq-collapsed {
+    display: none;
+}
 .info-paragraph {
     position: relative;
     border-radius: 5px;
