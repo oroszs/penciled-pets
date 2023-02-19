@@ -2,15 +2,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: black;
-    position: relative;
+    position: absolute;
     background-color: var(--gallery-bg);
-    width: 100%;
-    height: fit-content;
-    min-height: 100%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
 }
 .info-main {
     box-sizing: border-box;
@@ -21,8 +22,8 @@
     position: relative;
     width: 100%;
     height: auto;
-    min-height: 100px;
     flex: none;
+    background-color: var(--gallery-bg);
 }
 .faq-button {
     all: unset;
@@ -35,8 +36,22 @@
 h4 {
     margin-block: 0px;
 }
-.faq-collapsed {
-    display: none;
+.faq-div {
+    transition: all 2s ease-in-out;
+    max-height: 0px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--div-bg);
+    border-radius: 5px;
+}
+.faq-expanded {
+    max-height: 1000px;
 }
 .info-paragraph {
     position: relative;
@@ -183,6 +198,9 @@ h3 {
     }
 }
 @media screen and (max-width: 780px) {
+    .faq-button {
+        padding: 5px;
+    }
     .info-img-holder {
         margin-bottom: 10px;
     }
