@@ -149,7 +149,7 @@ h3 {
     margin-block: 0px;
     margin-top: 30px;
 }
-#photo-header {
+.photo-header {
     margin-bottom: 50px;
 }
 @media screen and (max-width: 1400px) {
