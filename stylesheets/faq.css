@@ -37,8 +37,7 @@ h4 {
     margin-block: 0px;
 }
 .faq-div {
-    transition: all 2s ease-in-out;
-    max-height: 0px;
+    transition: all 1s ease-in-out;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -50,8 +49,8 @@ h4 {
     background-color: var(--div-bg);
     border-radius: 5px;
 }
-.faq-expanded {
-    max-height: 1000px;
+.faq-collapsed {
+    height: 0px;
 }
 .info-paragraph {
     position: relative;
