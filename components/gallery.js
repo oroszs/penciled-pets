@@ -4,6 +4,9 @@ window.onload = () => {
 const galleryInit = () => {
     populateGallery();
     galleryControlsInit();
+    galleryControlsHelp();
+}
+const galleryControlsHelp = () => {
 }
 const galleryControlsInit = () => {
     const wrap = document.querySelector('.gallery-wrapper');
