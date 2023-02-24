@@ -4,9 +4,22 @@ window.onload = () => {
 const galleryInit = () => {
     populateGallery();
     galleryControlsInit();
-    galleryControlsHelp();
 }
 const galleryControlsHelp = () => {
+    if(document.querySelector('.help-bg')) return;
+    const wrap = document.querySelector('.gallery-wrapper');
+    const helpBg = document.createElement('div');
+    const imgHolder = document.querySelector('#img-holder');
+    helpBg.classList.add('help-bg');
+    wrap.style.height = '100%';
+    imgHolder.style.overflow = 'hidden';
+    window.scroll(0,0);
+    wrap.appendChild(helpBg);
+    helpBg.onclick = () => {
+        wrap.style.height = '';
+        imgHolder.style.overflow = '';
+        helpBg.remove();
+    }
 }
 const galleryControlsInit = () => {
     const wrap = document.querySelector('.gallery-wrapper');
@@ -14,6 +27,7 @@ const galleryControlsInit = () => {
     const holders = Array.from(document.querySelectorAll('.button-holder'));
     holders.forEach(holder => {
         holder.onclick = (e) => {
+            if(document.querySelector('.help-bg')) return;
             e.stopPropagation();
             holder.classList.toggle('revealed');
         }
@@ -22,6 +36,8 @@ const galleryControlsInit = () => {
     controlButtons.forEach(control => {
         control.onclick = (e) => changeGallery(e);
     });
+    const helpButton = document.querySelector('#gallery-controls-help');
+    helpButton.onclick = () => galleryControlsHelp();
 }
 const changeGallery = (e) => {
     const button = e.currentTarget;
