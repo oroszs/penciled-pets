@@ -13,11 +13,13 @@ const galleryControlsHelp = () => {
     helpBg.classList.add('help-bg');
     wrap.style.height = '100%';
     imgHolder.style.overflow = 'hidden';
+    wrap.style.overflow = 'hidden';
     window.scroll(0,0);
     wrap.appendChild(helpBg);
     helpBg.onclick = () => {
         wrap.style.height = '';
         imgHolder.style.overflow = '';
+        wrap.style.overflow = '';
         helpBg.remove();
     }
 }
