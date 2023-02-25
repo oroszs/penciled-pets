@@ -96,6 +96,9 @@ h4 {
 .mediums-div {
     height: 400px;
 }
+.pricing-div {
+    height: 400px;
+}
 .photo-div {
     height: 220px;
 }
@@ -112,6 +115,14 @@ h4 {
 }
 .photo-landscape-border-div {
     width: 300px;
+    height: auto;
+}
+.pricing-portrait-border-div {
+    width: 200px;
+    height: auto;
+}
+.pricing-landscape-border-div {
+    width: 400px;
     height: auto;
 }
 .medium-portrait-border-div {
@@ -194,6 +205,17 @@ h3 {
     .medium-square-border-div {
         width: 150px;
         height: auto;
+    }
+    .pricing-portrait-border-div {
+        width: 150px;
+        height: auto;
+    }
+    .pricing-landscape-border-div {
+        width: 250px;
+        height: auto;
+    }
+    .pricing-div {
+        height: 300px;
     }
 }
 @media screen and (max-width: 780px) {
