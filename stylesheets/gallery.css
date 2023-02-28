@@ -43,7 +43,6 @@
 .main {
     flex: 1 1 auto;
     position: relative;
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -88,7 +87,6 @@
     background-color: var(--div-bg);
     margin-top: 30px;
     border-radius: 5px;
-    z-index: 10;
 }
 #control-header {
     margin-block: 5px;
@@ -101,7 +99,6 @@
     flex-direction: row;
     justify-content: center;
     position: relative;
-    z-index: 11;
 }
 .button-holder {
     transition: .5s all ease-in-out;
@@ -200,7 +197,7 @@
     top: 0px;
     bottom: 0px;
     background-color: var(--modal-bg-color);
-    z-index: 9;
+    z-index: 20;
 }
 .modal-bg {
     position: fixed;

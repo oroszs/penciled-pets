@@ -11,8 +11,8 @@ const galleryControlsHelp = () => {
     const helpBg = document.createElement('div');
     const imgHolder = document.querySelector('#img-holder');
     helpBg.classList.add('help-bg');
-    wrap.style.height = '100%';
     imgHolder.style.overflow = 'hidden';
+    wrap.style.height = '100%';
     wrap.style.overflow = 'hidden';
     window.scroll(0,0);
     wrap.appendChild(helpBg);
