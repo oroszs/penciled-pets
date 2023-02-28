@@ -65,7 +65,7 @@
     position: relative;
     overflow-y: auto;
     font-size: 30pt;
-    flex: none;
+    flex: 1 1 auto;
 }
 .text-holder {
     position: fixed;
