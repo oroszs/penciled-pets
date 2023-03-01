@@ -92,7 +92,7 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px), (max-height: 500px) {
     .navbar {
         font-size: 12pt;
         top: 70px;
