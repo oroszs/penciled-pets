@@ -90,6 +90,7 @@
 }
 #control-header {
     margin-block: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #gallery-controls-help {
     cursor: pointer;

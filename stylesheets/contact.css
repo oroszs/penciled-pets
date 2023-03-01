@@ -21,6 +21,11 @@ h1 {
     min-height: 100px;
     flex: 1 1 auto;
 }
+#contact-header {
+    font-size: 35pt;
+    font-family: 'marker-felt';
+    font-weight: lighter;
+}
 .contact-paragraph {
     position: relative;
     border-radius: 5px;
@@ -46,5 +51,8 @@ h1 {
         font-size: 10pt;
         margin: 15px 0px 15px 0px;
         padding: 10px;
+    }
+    #contact-header {
+        font-size: 25pt;
     }
 }

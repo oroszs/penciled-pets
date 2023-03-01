@@ -25,6 +25,10 @@
     flex: none;
     background-color: var(--gallery-bg);
 }
+#faq-header {
+    font-family: 'marker-felt';
+    font-weight: lighter;
+}
 .faq-button {
     all: unset;
     cursor: pointer;
@@ -44,7 +48,6 @@ h4 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
     margin-bottom: 20px;
     background-color: var(--div-bg);
     border-radius: 5px;

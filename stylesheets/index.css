@@ -3,9 +3,19 @@
     --accent-color: rgb(144, 207, 115);
     --gallery-bg: rgb(226, 255, 194);
     --div-bg: rgb(185, 240, 157);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@font-face {
+    font-family: 'marker-felt';
+    src: url('../fonts/marker-felt.ttf');
 }
 body {
     margin: 0px;
+}
+.index-header {
+    font-family: 'marker-felt';
+    margin-block: 0px;
+    font-weight: lighter;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -13,7 +23,6 @@ body::-webkit-scrollbar {
     scrollbar-width: none;
 }
 .wrapper {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: black;
     position: absolute;
@@ -27,13 +36,21 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
 }
+.logo-div {
+    width: 100%;
+    height: 105px;
+}
+.logo-img {
+    width: auto;
+    height: 100%;
+}
 header {
     z-index: 19;
     background-color: white;
     padding: 0px;
     font-size: 30pt;
     font-family: 'Gothic A1';
-    height: 100px;
+    height: 150px;
     width: 100%;
     position: relative;
     top: 0px;
@@ -47,8 +64,9 @@ header a:visited {
     color: black;
 }
 .navbar {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
-    top: 55px;
+    top: 105px;
     font-size: 18pt;
     width: 100%;
     display: flex;
@@ -76,9 +94,17 @@ p {
 }
 @media screen and (max-width: 500px) {
     .navbar {
-        font-size: 16pt;
+        font-size: 12pt;
+        top: 70px;
+        height: 44px;
     }
     #contact-link {
-        font-size: 12pt;
+        font-size: 18pt;
+    }
+    .logo-div {
+        height: 70px;
+    }
+    header {
+        height: 114px;
     }
 }
