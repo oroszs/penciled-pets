@@ -94,6 +94,9 @@ h4 {
     box-sizing: border-box;
     height: fit-content;
 }
+.payment-header {
+    display: inline-block;
+}
 .subjects-div {
     height: 325px;
 }

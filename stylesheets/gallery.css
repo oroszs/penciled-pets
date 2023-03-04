@@ -228,6 +228,9 @@
     width: var(--sml-land);
     height: auto;
 }
+#gallery-controls-help {
+    --fa-bounce-height: -.5em;
+}
 .help-bg {
     position: absolute;
     left: 0px;

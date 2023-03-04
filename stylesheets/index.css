@@ -16,6 +16,7 @@ body {
     font-family: 'marker-felt';
     margin-block: 0px;
     font-weight: lighter;
+    --fa-beat-scale: 1.1;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -98,8 +99,11 @@ p {
         top: 70px;
         height: 44px;
     }
+    #comissions-header {
+        font-size: 21pt;
+    }
     #contact-link {
-        font-size: 18pt;
+        font-size: 14pt;
     }
     .logo-div {
         height: 70px;

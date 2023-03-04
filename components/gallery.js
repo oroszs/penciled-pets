@@ -39,7 +39,10 @@ const galleryControlsInit = () => {
         control.onclick = (e) => changeGallery(e);
     });
     const helpButton = document.querySelector('#gallery-controls-help');
-    helpButton.onclick = () => galleryControlsHelp();
+    helpButton.onclick = () => {
+        helpButton.classList.remove('fa-bounce');
+        galleryControlsHelp();
+    }
 }
 const changeGallery = (e) => {
     const button = e.currentTarget;
