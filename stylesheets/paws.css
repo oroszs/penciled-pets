@@ -1,0 +1,34 @@
+.pawprint {
+    display: block;
+    flex: none;
+    width: 50px;
+    height: 50px;
+    color: rgba(0, 0, 0, 0.193);
+    z-index: 20;
+}
+.column-holder {
+    --paw-margin: 50px;
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    height: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -90%) rotate(45deg);
+}
+.column {
+    box-sizing: border-box;
+    width: 50px;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.left-column {
+    margin-top: var(--paw-margin);
+}
+.right-column {
+    margin-bottom: var(--paw-margin);
+}
