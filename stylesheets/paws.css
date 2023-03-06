@@ -14,8 +14,8 @@
     height: 1000px;
     position: absolute;
     left: 50%;
-    top: 90%;
-    transform: translate(-50%, -90%) rotate(45deg);
+    top: 65%;
+    transform: rotate(45deg);
 }
 .column {
     box-sizing: border-box;
