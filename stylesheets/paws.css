@@ -13,8 +13,6 @@
     width: 100px;
     height: 1000px;
     position: absolute;
-    left: 50%;
-    top: 65%;
     transform: rotate(45deg);
 }
 .column {
