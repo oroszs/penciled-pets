@@ -24,5 +24,7 @@ const createPaw = (holder, side, speed, totalPaws) => {
     totalPaws++;
     if(totalPaws < 20) {
         setTimeout(() => {createPaw(holder, side, speed, totalPaws)}, speed);
+    } else {
+        holder.remove();
     }
 }
