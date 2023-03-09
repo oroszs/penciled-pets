@@ -26,6 +26,7 @@ h1 {
     font-size: 35pt;
     font-family: 'marker-felt';
     font-weight: lighter;
+    --fa-beat-scale: 1.1;
 }
 .contact-paragraph {
     position: relative;
