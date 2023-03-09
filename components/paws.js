@@ -54,7 +54,7 @@ const createPaw = (holder, side, speed, totalPaws) => {
         },
         {
             color: 'rgba(0,0,0,0)',
-            transform: 'scale(.8)',
+            transform: 'scale(1)',
         }], 
         {
             duration: animTime,
