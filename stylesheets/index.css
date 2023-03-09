@@ -5,18 +5,19 @@
     --div-bg: rgb(185, 240, 157);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+body {
+    margin: 0px;
+}
 @font-face {
     font-family: 'marker-felt';
     src: url('../fonts/marker-felt.ttf');
-}
-body {
-    margin: 0px;
 }
 .index-header {
     font-family: 'marker-felt';
     margin-block: 0px;
     font-weight: lighter;
     --fa-beat-scale: 1.1;
+    z-index: 3;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -36,6 +37,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 .logo-div {
     width: 100%;

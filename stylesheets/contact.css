@@ -20,13 +20,13 @@ h1 {
     height: 100%;
     min-height: 100px;
     flex: 1 1 auto;
-    overflow: hidden;
 }
 #contact-header {
     font-size: 35pt;
     font-family: 'marker-felt';
     font-weight: lighter;
-    --fa-beat-scale: 1.1;
+    --fa-beat-scale: 1.05;
+    z-index: 3;
 }
 .contact-paragraph {
     position: relative;
@@ -44,6 +44,7 @@ h1 {
     flex: none;
     color: black;
     text-decoration: none;
+    z-index: 3;
 }
 @media screen and (max-width: 700px), (max-height: 500px) {
     h1 {

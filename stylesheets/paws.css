@@ -1,23 +1,23 @@
 .pawprint {
     display: block;
     flex: none;
-    width: 50px;
-    height: 50px;
-    color: rgba(0, 0, 0, 0.1);
-    z-index: 20;
+    width: var(--paw-size);
+    height: var(--paw-size);
 }
 .column-holder {
-    --paw-margin: 50px;
+    --paw-size: 75px;
     display: flex;
     flex-direction: row;
-    width: 100px;
-    height: 1000px;
+    width: calc(var(--paw-size) * 2);
+    height: calc(var(--paw-size) * 30);
     position: absolute;
-    transform: rotate(45deg);
+    z-index: 2;
+    left: 50%;
+    top: 50%;
 }
 .column {
     box-sizing: border-box;
-    width: 50px;
+    width: var(--paw-size);
     flex: none;
     display: flex;
     flex-direction: column;
@@ -25,8 +25,8 @@
     align-items: center;
 }
 .left-column {
-    margin-top: var(--paw-margin);
+    margin-bottom: var(--paw-size);
 }
 .right-column {
-    margin-bottom: var(--paw-margin);
+    margin-top: var(--paw-size);
 }

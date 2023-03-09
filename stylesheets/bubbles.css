@@ -1,6 +1,6 @@
 :root {
     --bubble-margin: 35px;
-    --normal-size: 120px;
+    --normal-size: 175px;
     --small-size: 120px;
     --bubble-shadow-color: rgb(71, 71, 71);
 }
@@ -43,6 +43,7 @@
     padding-left: 0px;
     padding-right: 0px;
     border-radius: 10px;
+    z-index: 3;
 }
 .bubbleFadeClass {
     animation: 6s ease-in bubbleFadeAnim forwards;
