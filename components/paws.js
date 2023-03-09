@@ -4,7 +4,7 @@ window.onload = () => {
 
 const pawsInit = () => {
     const colHolder = document.querySelector('.column-holder');
-    createPaw(colHolder, 'left', 200, 0);
+    createPaw(colHolder, 'left', 1000, 0);
 }
 const createPaw = (holder, side, speed, totalPaws) => {
     const paw = document.createElement('i');
