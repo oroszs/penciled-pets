@@ -28,7 +28,7 @@ const createTrail = () => {
         maxPaws = Math.ceil(width / 150) + 4;
     }
     maxPaws *=2;
-    colHolder.style.height = `${(150 * Math.ceil(maxPaws / 2))}px`;
+    colHolder.style.height = `${(150 * Math.ceil(maxPaws / 4))}px`;
     createPaw(colHolder, 'right', pawSpeed, 0, maxPaws);
 }
 const createPaw = (holder, side, speed, totalPaws, maxPaws) => {
