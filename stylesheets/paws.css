@@ -3,13 +3,13 @@
     flex: none;
     width: var(--paw-size);
     height: var(--paw-size);
+    color: black;
 }
 .column-holder {
     --paw-size: 75px;
     display: flex;
     flex-direction: row;
     width: calc(var(--paw-size) * 2);
-    height: calc(var(--paw-size) * 30);
     position: absolute;
     z-index: 2;
     left: 50%;

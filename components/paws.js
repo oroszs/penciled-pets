@@ -19,9 +19,19 @@ const createTrail = () => {
     let wrap = document.querySelector('.wrapper');
     wrap.prepend(colHolder);
     const pawSpeed = 500;
-    createPaw(colHolder, 'right', pawSpeed, 0);
+    let maxPaws;
+    let width = window.screen.width;
+    let height = window.screen.height;
+    if((angle > 310) || (angle < 50) || (angle > 130 && angle < 230) || width < 700) {
+        maxPaws = Math.ceil(height / 150) + 6;
+    } else {
+        maxPaws = Math.ceil(width / 150) + 4;
+    }
+    maxPaws *=2;
+    colHolder.style.height = `${(150 * Math.ceil(maxPaws / 2))}px`;
+    createPaw(colHolder, 'right', pawSpeed, 0, maxPaws);
 }
-const createPaw = (holder, side, speed, totalPaws) => {
+const createPaw = (holder, side, speed, totalPaws, maxPaws) => {
     const animTime = 3000;
     const paw = document.createElement('i');
     paw.classList.add('fa-solid');
@@ -62,8 +72,8 @@ const createPaw = (holder, side, speed, totalPaws) => {
         }
     );
     totalPaws++;
-    if(totalPaws < 35) {
-        setTimeout(() => {createPaw(holder, side, speed, totalPaws)}, speed);
+    if(totalPaws < maxPaws) {
+        setTimeout(() => {createPaw(holder, side, speed, totalPaws, maxPaws)}, speed);
     } else {
         holder.remove();
         createTrail();
