@@ -1,12 +1,14 @@
 window.addEventListener('load', ()=> {pawsInit()});
 
 const pawsInit = () => {
-    createTrail();
+    let trailTime = createTrail();
     setInterval(() => {
         createTrail();
-    }, 5000);
+    }, trailTime);
 }
 const createTrail = () => {
+    let holders = Array.from(document.querySelectorAll('.column-holder'));
+    if(holders.length > 1) return;
     const min = 0;
     const max = 360;
     const angle = Math.floor(Math.random() * (max - min)) + min;
@@ -22,28 +24,37 @@ const createTrail = () => {
     let wrap = document.querySelector('.wrapper');
     wrap.prepend(colHolder);
     const pawSpeed = 500;
-    let maxPaws;
+    let maxPaws, pawSize, size, time;
     let width = window.screen.width;
     let height = window.screen.height;
-    if((angle > 310) || (angle < 50) || (angle > 130 && angle < 230) || width < 700) {
-        if(window.screen.width >= 700){
-            maxPaws = Math.ceil(height / 150) + 2;
-        } else {
-            maxPaws = Math.ceil(height / 70);
-        }
+    if(width >= 700) {
+        pawSize = 150;
+        size='big';
+        time = 8000;
     } else {
-        maxPaws = Math.ceil(width / 150);
+        pawSize = 70;
+        size='small';
+        time = 8000;
     }
+    if((angle > 310) || (angle < 50) || (angle > 130 && angle < 230)) {
+        maxPaws = Math.ceil(height / pawSize) + 4;
+    } else {
+        maxPaws = Math.ceil(width / pawSize) + 4;
+    }
+    colHolder.style.height = `${(pawSize * Math.ceil(maxPaws / 1.5))}px`;
     maxPaws *=2;
-    colHolder.style.height = `${(150 * Math.ceil(maxPaws / 4))}px`;
-    createPaw(colHolder, 'right', pawSpeed, 0, maxPaws);
+    createPaw(colHolder, 'right', pawSpeed, 0, maxPaws, size);
+    return time;
 }
-const createPaw = (holder, side, speed, totalPaws, maxPaws) => {
+const createPaw = (holder, side, speed, totalPaws, maxPaws, size) => {
     const animTime = 3000;
     const paw = document.createElement('i');
     paw.classList.add('fa-solid');
     paw.classList.add('fa-paw');
-    paw.classList.add('fa-2x');
+    if(size === 'big') {
+        paw.classList.add('fa-2x');
+    } else {
+    }
     paw.classList.add('pawprint');
     if(side === 'left') {
         paw.classList.add('left-column');
@@ -65,13 +76,17 @@ const createPaw = (holder, side, speed, totalPaws, maxPaws) => {
             offset: .05
         },
         {
-            color: 'rgba(0,0,0,.7)',
+            color: 'rgba(53, 83, 21,.8)',
             transform: 'scale(1.3)',
             offset: .1
         },
         {
-            color: 'rgba(0,0,0,0)',
+            color: 'rgba(53, 83, 21,0)',
             transform: 'scale(1)',
+            offset: .9
+        },
+        {
+            color: 'rgba(53, 83, 21,0)'
         }], 
         {
             duration: animTime,
@@ -80,7 +95,7 @@ const createPaw = (holder, side, speed, totalPaws, maxPaws) => {
     );
     totalPaws++;
     if(totalPaws < maxPaws) {
-        setTimeout(() => {createPaw(holder, side, speed, totalPaws, maxPaws)}, speed);
+        setTimeout(() => {createPaw(holder, side, speed, totalPaws, maxPaws, size)}, speed);
     } else {
         holder.remove();
     }

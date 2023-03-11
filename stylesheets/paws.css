@@ -4,6 +4,7 @@
     width: var(--paw-size);
     height: var(--paw-size);
     color: black;
+    z-index: 2;
 }
 .column-holder {
     --paw-size: 75px;
@@ -23,6 +24,7 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    z-index: 2;
 }
 .left-column {
     margin-bottom: var(--paw-size);
