@@ -1,7 +1,7 @@
 window.addEventListener('load', ()=> {pawsInit()});
 
 const pawsInit = () => {
-    createTrail();
+    setInterval(()=>{createTrail();},3000);
 }
 const createTrail = () => {
     const min = 0;
