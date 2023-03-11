@@ -76,6 +76,5 @@ const createPaw = (holder, side, speed, totalPaws, maxPaws) => {
         setTimeout(() => {createPaw(holder, side, speed, totalPaws, maxPaws)}, speed);
     } else {
         holder.remove();
-        createTrail();
     }
 }
