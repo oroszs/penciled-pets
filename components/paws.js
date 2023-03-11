@@ -26,7 +26,11 @@ const createTrail = () => {
     let width = window.screen.width;
     let height = window.screen.height;
     if((angle > 310) || (angle < 50) || (angle > 130 && angle < 230) || width < 700) {
-        maxPaws = Math.ceil(height / 150) + 2;
+        if(window.screen.width >= 700){
+            maxPaws = Math.ceil(height / 150) + 2;
+        } else {
+            maxPaws = Math.ceil(height / 70);
+        }
     } else {
         maxPaws = Math.ceil(width / 150);
     }
