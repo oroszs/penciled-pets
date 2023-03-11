@@ -27,7 +27,7 @@ const createTrail = () => {
     let maxPaws, pawSize, size, time;
     let width = window.screen.width;
     let height = window.screen.height;
-    if(width >= 700) {
+    if(width >= 800) {
         pawSize = 150;
         size='big';
         time = 8000;
