@@ -30,12 +30,11 @@ const createTrail = () => {
     if(width >= 800) {
         pawSize = 150;
         size='big';
-        time = 8000;
     } else {
         pawSize = 70;
         size='small';
-        time = 8000;
     }
+    time = 8000;
     if((angle > 310) || (angle < 50) || (angle > 130 && angle < 230)) {
         maxPaws = Math.ceil(height / pawSize) + 4;
     } else {
