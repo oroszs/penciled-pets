@@ -76,7 +76,7 @@ const createPaw = (holder, side, speed, totalPaws, maxPaws, size) => {
         {
             color: 'rgba(53, 83, 21,.8)',
             transform: 'scale(1.3)',
-            offset: .15
+            offset: .05
         },
         {
             color: 'rgba(53, 83, 21,0)',
