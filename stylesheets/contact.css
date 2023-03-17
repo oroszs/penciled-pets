@@ -45,7 +45,7 @@ h1 {
     color: black;
     text-decoration: none;
     z-index: 3;
-    --fa-bounce-height: -.5em;
+    --fa-bounce-height: -.25em;
 }
 @media screen and (max-width: 700px), (max-height: 500px) {
     h1 {
