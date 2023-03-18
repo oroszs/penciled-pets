@@ -219,7 +219,7 @@ const addModal = (buttonElement, imgSrc, imgOrientation) => {
         modalHolder.appendChild(modalImg);
         modalBg.appendChild(modalHolder);
         wrapper.appendChild(modalBg);
-        modalBg.onclick = () => modalBg.remove();
+        //modalBg.onclick = () => modalBg.remove();
         xIcon.onclick = (e) => {
             e.stopPropagation();
             modalBg.remove();
