@@ -28,6 +28,7 @@
 #faq-header {
     font-family: 'marker-felt';
     font-weight: lighter;
+    --fa-beat-scale: 1.05;
 }
 .faq-button {
     all: unset;
