@@ -10,6 +10,22 @@ const galleryControlsHelp = () => {
     const wrap = document.querySelector('.gallery-wrapper');
     const helpBg = document.createElement('div');
     const imgHolder = document.querySelector('#img-holder');
+    const tempDiv = document.createElement('div');
+    tempDiv.classList.add('help-temp-div');
+    const tempText = document.createElement('h3');
+    tempText.classList.add('help-temp-text');
+    tempText.textContent = 'Gallery Controls Tutorial Coming Soon!';
+    const tempTextEnd = document.createElement('h3');
+    tempTextEnd.textContent = 'Click / Tap Anywhere To Close';
+    tempTextEnd.classList.add('help-temp-text');
+    const wipIcon = document.createElement('i');
+    wipIcon.classList.add('fa-person-digging');
+    wipIcon.classList.add('fa-solid');
+    wipIcon.classList.add('fa-2x');
+    tempDiv.appendChild(tempText);
+    tempDiv.appendChild(wipIcon);
+    tempDiv.appendChild(tempTextEnd)
+    helpBg.appendChild(tempDiv);
     helpBg.classList.add('help-bg');
     imgHolder.style.overflow = 'hidden';
     wrap.style.height = '100%';

@@ -239,6 +239,26 @@
     bottom: 0px;
     background-color: var(--modal-bg-color);
     z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.help-temp-div {
+    background-color: white;
+    flex: none;
+    width: 250px;
+    height: 200px;
+    color: black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.help-temp-text {
+    flex: none;
 }
 .modal-bg {
     position: fixed;

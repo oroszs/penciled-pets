@@ -63,6 +63,7 @@ h4 {
     flex-wrap: wrap;
     flex: none;
     justify-content: space-around;
+    padding: 5px;
 }
 .payment-header {
     flex: none;
@@ -90,7 +91,6 @@ h4 {
     font-size: 15pt;
     display: flex;
     box-sizing: border-box;
-    margin: 50px;
     margin-bottom: 0px;
     flex: none;
     width: fit-content;
@@ -180,7 +180,6 @@ h4 {
 }
 h3 {
     padding: 10px;
-    background-color: var(--div-bg);
     border-radius: 5px;
     flex: none;
     margin-block: 0px;
