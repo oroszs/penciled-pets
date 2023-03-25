@@ -42,6 +42,11 @@
 h4 {
     margin-block: 0px;
 }
+.faq-div-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .faq-div {
     flex: none;
     transition: all 1s ease-in-out;
