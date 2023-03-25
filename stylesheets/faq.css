@@ -44,7 +44,7 @@ h4 {
 }
 .faq-div {
     transition: all 1s ease-in-out;
-    width: 100%;
+    width: 90%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
