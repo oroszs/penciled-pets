@@ -43,7 +43,6 @@ h4 {
     margin-block: 0px;
 }
 .faq-div-holder {
-    flex: none;
     display: flex;
     flex-direction: column;
     align-items: center;
