@@ -43,6 +43,7 @@ h4 {
     margin-block: 0px;
 }
 .faq-div {
+    flex: none;
     transition: all 1s ease-in-out;
     width: 90%;
     overflow: hidden;
