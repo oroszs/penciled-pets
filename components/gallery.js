@@ -5,6 +5,8 @@ const galleryInit = () => {
     populateGallery();
     galleryControlsInit();
 }
+const galleryControlsTutorial = () => {
+}
 const galleryControlsHelp = () => {
     if(document.querySelector('.help-bg')) return;
     const wrap = document.querySelector('.gallery-wrapper');
