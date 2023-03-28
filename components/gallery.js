@@ -6,6 +6,7 @@ const galleryInit = () => {
     galleryControlsInit();
 }
 const galleryControlsTutorial = () => {
+    const tutStep++;
 }
 const galleryControlsHelp = () => {
     if(document.querySelector('.help-bg')) return;
