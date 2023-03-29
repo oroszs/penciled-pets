@@ -4,9 +4,10 @@ window.onload = () => {
 const galleryInit = () => {
     populateGallery();
     galleryControlsInit();
+    galleryControlsTutorial(0);
 }
-const galleryControlsTutorial = () => {
-    const tutStep++;
+const galleryControlsTutorial = (tutStep) => {
+    tutStep++;
 }
 const galleryControlsHelp = () => {
     if(document.querySelector('.help-bg')) return;
