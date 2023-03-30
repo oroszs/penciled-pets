@@ -8,6 +8,12 @@ const galleryInit = () => {
 }
 const galleryControlsTutorial = (tutStep) => {
     tutStep++;
+    switch (tutStep){
+    case 1:
+    break;
+    default:
+    break;
+}
 }
 const galleryControlsHelp = () => {
     if(document.querySelector('.help-bg')) return;
