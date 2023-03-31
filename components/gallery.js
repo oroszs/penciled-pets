@@ -8,6 +8,7 @@ const galleryInit = () => {
 }
 const galleryControlsTutorial = (tutStep) => {
     tutStep++;
+    let tutDiv = document.createElement('div');
     switch (tutStep){
     case 1:
     break;
