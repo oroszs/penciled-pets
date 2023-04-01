@@ -7,13 +7,16 @@ const galleryInit = () => {
     galleryControlsTutorial(0);
 }
 const galleryControlsTutorial = (tutStep) => {
-    tutStep++;
     let tutDiv = document.createElement('div');
     switch (tutStep){
     case 1:
     break;
     default:
     break;
+}
+    tutDiv.onclick = () => {
+        tutStep++;
+        galleryControlsTutorial(tutStep);
 }
 }
 const galleryControlsHelp = () => {
