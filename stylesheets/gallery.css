@@ -328,7 +328,7 @@
         --arrow-margin: 40px;
         --arrow-width: 10px;
         --arrow-height: calc(var(--arrow-width) * 7);
-        top: 110px;
+        top: 115px;
     }
     .help-temp-div {
         width: 80%;
