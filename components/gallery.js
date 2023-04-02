@@ -10,6 +10,7 @@ const galleryControlsTutorial = (tutStep) => {
     let tutDiv = document.createElement('div');
     switch (tutStep){
     case 1:
+        tutDiv.textContent = 'These are the Gallery Control Buttons';
     break;
     default:
     break;
