@@ -28,7 +28,7 @@
     position: absolute;
     flex: none;
     --arrow-width: 15px;
-    --arrow-height: calc(var(--arrow-width) * 8);
+    --arrow-height: calc(var(--arrow-width) * 6);
     --arrow-line-width: calc(var(--arrow-width) / 3);
     --arrow-color: rgb(0, 238, 255);
     --arrow-margin: 60px;
@@ -36,7 +36,7 @@
     width: var(--arrow-width);
     height: var(--arrow-height);
     z-index: 30;
-    top: 95px;
+    top: 85px;
     left: calc(50% - (var(--arrow-width) / 2));
 }
 .arrow-1 {
