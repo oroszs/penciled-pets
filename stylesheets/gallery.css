@@ -372,6 +372,9 @@
     }
 }
 @media screen and (min-width: 500px) {
+    .help-temp-div {
+        width: 80%;
+    }
     .gallery-img-button:hover {
         box-shadow: 10px 10px 10px var(--accent-color);
     }
