@@ -4,17 +4,56 @@ window.onload = () => {
 const galleryInit = () => {
     populateGallery();
     galleryControlsInit();
-    galleryControlsTutorial(0);
 }
 const galleryControlsTutorial = (tutStep) => {
+    const wrap = document.querySelector('.gallery-wrapper');
+    const imgHolder = document.querySelector('#img-holder');
+    const tutBg = document.createElement('div');
+    tutBg.classList.add('help-bg');
     let tutDiv = document.createElement('div');
     switch (tutStep){
     case 1:
+        tutDiv.classList.add('help-temp-div');
         tutDiv.textContent = 'These are the Gallery Control Buttons';
+        const arrowDiv1 = document.createElement('div');
+        const arrowDiv2 = document.createElement('div');
+        const arrowDiv3 = document.createElement('div');
+        const arrowPoint1 = document.createElement('div');
+        const arrowPoint2 = document.createElement('div');
+        const arrowPoint3 = document.createElement('div');
+        const arrowLine1 = document.createElement('div');
+        const arrowLine2 = document.createElement('div');
+        const arrowLine3 = document.createElement('div');
+        arrowDiv1.classList.add('arrow', 'arrow-1');
+        arrowDiv2.classList.add('arrow', 'arrow-2');
+        arrowDiv3.classList.add('arrow', 'arrow-3');
+        arrowPoint1.classList.add('arrow-point');
+        arrowPoint2.classList.add('arrow-point');
+        arrowPoint3.classList.add('arrow-point');
+        arrowLine1.classList.add('arrow-line');
+        arrowLine2.classList.add('arrow-line');
+        arrowLine3.classList.add('arrow-line');
+        arrowDiv1.append(arrowPoint1, arrowLine1);
+        arrowDiv2.append(arrowPoint2, arrowLine2);
+        arrowDiv3.append(arrowPoint3, arrowLine3);
+        tutBg.append(arrowDiv1, arrowDiv2, arrowDiv3);
     break;
     default:
     break;
 }
+    imgHolder.style.overflow = 'hidden';
+    wrap.style.height = '100%';
+    wrap.style.overflow = 'hidden';
+    window.scroll(0,0);
+    tutBg.onclick = (e) => {
+        e.stopPropagation();
+        wrap.style.height = '';
+        imgHolder.style.overflow = '';
+        wrap.style.overflow = '';
+        tutBg.remove();
+    }
+    tutBg.appendChild(tutDiv);
+    wrap.appendChild(tutBg);
     tutDiv.onclick = () => {
         tutStep++;
         galleryControlsTutorial(tutStep);
@@ -72,7 +111,7 @@ const galleryControlsInit = () => {
     const helpButton = document.querySelector('#gallery-controls-help');
     helpButton.onclick = () => {
         helpButton.classList.remove('fa-bounce');
-        galleryControlsHelp();
+        galleryControlsTutorial(1);
     }
 }
 const changeGallery = (e) => {

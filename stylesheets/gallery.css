@@ -23,16 +23,26 @@
     --button-size: 30px;
     --button-margin: 10px;
 }
+
 .arrow {
-    --arrow-width: 25px;
-    --arrow-height: calc(var(--arrow-width) * 2);
-    --arrow-line-width: calc(var(--arrow-width) / 3);
-    --arrow-color: rgb(255, 255, 255);
     position: absolute;
-    display: block;
+    flex: none;
+    --arrow-width: 15px;
+    --arrow-height: calc(var(--arrow-width) * 8);
+    --arrow-line-width: calc(var(--arrow-width) / 3);
+    --arrow-color: rgb(0, 238, 255);
+    display: inline-block;
     width: var(--arrow-width);
     height: var(--arrow-height);
     z-index: 30;
+    top: 95px;
+    left: 49.5%;
+}
+.arrow-1 {
+    transform:translate(-60px,0);
+}
+.arrow-3 {
+    transform:translate(60px, 0);
 }
 .arrow-point {
     display: inline-block;
@@ -241,15 +251,16 @@
     z-index: 20;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-content: center;
     flex-wrap: wrap;
 }
 .help-temp-div {
-    background-color: white;
+    position: relative;
     flex: none;
-    width: 250px;
-    height: 200px;
+    top: 50px;
+    background-color: white;
+    width: 400px;
+    height: 50px;
     color: black;
     border-radius: 5px;
     display: flex;
@@ -257,6 +268,7 @@
     justify-content:center;
     align-items: center;
     box-shadow: 0px 0px 5px white;
+    z-index: 31;
 }
 .help-temp-text {
     flex: none;
