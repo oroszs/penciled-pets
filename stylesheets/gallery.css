@@ -36,7 +36,7 @@
     width: var(--arrow-width);
     height: var(--arrow-height);
     z-index: 30;
-    top: 130px;
+    top: 95px;
     left: calc(50% - (var(--arrow-width) / 2));
 }
 .arrow-1 {
@@ -328,7 +328,7 @@
         --arrow-margin: 40px;
         --arrow-width: 10px;
         --arrow-height: calc(var(--arrow-width) * 7);
-        top: 90px;
+        top: 110px;
     }
     .help-temp-div {
         width: 80%;
