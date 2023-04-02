@@ -36,7 +36,7 @@
     height: var(--arrow-height);
     z-index: 30;
     top: 95px;
-    left: 49.5%;
+    left: calc(50% - (var(--arrow-width) / 2));
 }
 .arrow-1 {
     transform:translate(-60px,0);
