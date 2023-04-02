@@ -11,32 +11,20 @@ const galleryControlsTutorial = (tutStep) => {
     const tutBg = document.createElement('div');
     tutBg.classList.add('help-bg');
     let tutDiv = document.createElement('div');
+    tutDiv.classList.add('help-temp-div');
     switch (tutStep){
     case 1:
-        tutDiv.classList.add('help-temp-div');
         tutDiv.textContent = 'These are the Gallery Control Buttons';
-        const arrowDiv1 = document.createElement('div');
-        const arrowDiv2 = document.createElement('div');
-        const arrowDiv3 = document.createElement('div');
-        const arrowPoint1 = document.createElement('div');
-        const arrowPoint2 = document.createElement('div');
-        const arrowPoint3 = document.createElement('div');
-        const arrowLine1 = document.createElement('div');
-        const arrowLine2 = document.createElement('div');
-        const arrowLine3 = document.createElement('div');
-        arrowDiv1.classList.add('arrow', 'arrow-1');
-        arrowDiv2.classList.add('arrow', 'arrow-2');
-        arrowDiv3.classList.add('arrow', 'arrow-3');
-        arrowPoint1.classList.add('arrow-point');
-        arrowPoint2.classList.add('arrow-point');
-        arrowPoint3.classList.add('arrow-point');
-        arrowLine1.classList.add('arrow-line');
-        arrowLine2.classList.add('arrow-line');
-        arrowLine3.classList.add('arrow-line');
-        arrowDiv1.append(arrowPoint1, arrowLine1);
-        arrowDiv2.append(arrowPoint2, arrowLine2);
-        arrowDiv3.append(arrowPoint3, arrowLine3);
-        tutBg.append(arrowDiv1, arrowDiv2, arrowDiv3);
+        const arrow1 = createArrow();
+        const arrow2 = createArrow();
+        const arrow3 = createArrow();
+        arrow1.classList.add('arrow-1');
+        arrow2.classList.add('arrow-2');
+        arrow3.classList.add('arrow-3');
+        tutBg.append(arrow1, arrow2, arrow3);
+    break;
+    case 2:
+        tutDiv.textContent = 'This button controls the size of the images';
     break;
     default:
     break;
@@ -58,6 +46,16 @@ const galleryControlsTutorial = (tutStep) => {
         tutStep++;
         galleryControlsTutorial(tutStep);
 }
+}
+const createArrow = () => {
+    const arrow = document.createElement('div');
+    arrow.classList.add('arrow');
+    const point = document.createElement('div');
+    point.classList.add('arrow-point');
+    const line = document.createElement('div');
+    line.classList.add('arrow-line');
+    arrow.append(point, line);
+    return arrow;
 }
 const galleryControlsHelp = () => {
     if(document.querySelector('.help-bg')) return;
