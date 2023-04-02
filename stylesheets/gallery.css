@@ -325,6 +325,7 @@
 }
 @media screen and (max-width: 500px) {
     --arrow-margin: 40px;
+    --arrow-width: 10px;
     .help-temp-div {
         width: 80%;
     }
