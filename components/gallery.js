@@ -31,6 +31,15 @@ const galleryControlsTutorial = (tutStep) => {
         sizeButton.classList.add('revealed');
         tutBg.appendChild(arrow);
     break;
+    case 3:
+        tutDiv.textContent = 'This button filters the images by medium';
+        const sizeButton = document.querySelector('#size-holder');
+        sizeButton.classList.remove('revealed');
+        const medButton = document.querySelector('#medium-holder');
+        medButton.classList.add('revealed');
+        const arrow = createArrow();
+        arrow.classList.add('arrow-2');
+    break;
     default:
     break;
 }
