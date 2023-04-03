@@ -12,6 +12,7 @@ const galleryControlsTutorial = (tutStep) => {
     tutBg.classList.add('help-bg');
     let tutDiv = document.createElement('div');
     tutDiv.classList.add('help-temp-div');
+    hideAllRevealedHolders();
     switch (tutStep){
     case 1:
         tutDiv.textContent = 'These are the Gallery Control Buttons';
@@ -33,33 +34,50 @@ const galleryControlsTutorial = (tutStep) => {
     break;
     case 3:
         tutDiv.textContent = 'This button filters the images by medium';
-        let size = document.querySelector('#size-holder');
-        size.classList.remove('revealed');
         let medButton = document.querySelector('#medium-holder');
         medButton.classList.add('revealed');
         let arr = createArrow();
         tutBg.appendChild(arr);
     break;
+    case 4:
+        tutDiv.textContent = 'This button filters the images by subject';
+        let subButton = document.querySelector('#subject-holder');
+        subButton.classList.add('revealed');
+        let ar = createArrow();
+        ar.classList.add('arrow-3');
+        tutBg.appendChild(ar);
+    break;
     default:
+        removeBg();
     break;
 }
     imgHolder.style.overflow = 'hidden';
     wrap.style.height = '100%';
     wrap.style.overflow = 'hidden';
     window.scroll(0,0);
-    tutBg.onclick = (e) => {
-        e.stopPropagation();
-        wrap.style.height = '';
-        imgHolder.style.overflow = '';
-        wrap.style.overflow = '';
-        tutBg.remove();
-    }
+    tutBg.onclick = () => removeBg();
     tutBg.appendChild(tutDiv);
     wrap.appendChild(tutBg);
     tutDiv.onclick = () => {
         tutStep++;
         galleryControlsTutorial(tutStep);
 }
+}
+const removeBg = () => {
+        hideAllRevealedHolders();
+        const wrap = document.querySelector('.gallery-wrapper');
+        const imgHolder = document.querySelector('#img-holder');
+        const tutBg = document.querySelector('.help-bg');
+        wrap.style.height = '';
+        imgHolder.style.overflow = '';
+        wrap.style.overflow = '';
+        tutBg.remove();
+}
+const hideAllRevealedHolders = () => {
+    let revealed = Array.from(document.querySelectorAll('.revealed'));
+    revealed.forEach(el => {
+        el.classList.remove('revealed');
+    });
 }
 const createArrow = () => {
     const arrow = document.createElement('div');
