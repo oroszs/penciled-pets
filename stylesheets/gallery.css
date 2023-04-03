@@ -255,7 +255,8 @@
     align-content: center;
     flex-wrap: wrap;
 }
-.help-temp-div {
+.help-div {
+    cursor: pointer;
     position: relative;
     flex: none;
     top: 50px;
@@ -330,7 +331,7 @@
         --arrow-height: calc(var(--arrow-width) * 7);
         top: 115px;
     }
-    .help-temp-div {
+    .help-div {
         width: 80%;
         font-size: 10pt;
         top: 100px;

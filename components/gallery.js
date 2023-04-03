@@ -11,30 +11,31 @@ const galleryControlsTutorialSetup = () => {
     const tutBg = document.createElement('div');
     tutBg.classList.add('help-bg');
     let tutDiv = document.createElement('div');
-    tutDiv.classList.add('help-temp-div');
+    tutDiv.classList.add('help-div');
     hideAllRevealedHolders();
     imgHolder.style.overflow = 'hidden';
     wrap.style.height = '100%';
     wrap.style.overflow = 'hidden';
     window.scroll(0,0);
-    tutBg.onclick = (e) => removeBg(e);
     tutBg.appendChild(tutDiv);
     wrap.appendChild(tutBg);
+    let tutStep = 1;
     tutDiv.onclick = () => {
         tutStep++;
         galleryControlsTutorial(tutStep);
     }
-    galleryControlsTutorial(1);
+    galleryControlsTutorial(tutStep);
 }
 const galleryControlsTutorial = (tutStep) => {
-    let tutDiv = document.querySelector('.help-temp-div');
+    let tutDiv = document.querySelector('.help-div');
     let tutBg = document.querySelector('.help-bg');
-    let arrows = Array.from(document.querySelectorAll('.arrow');
-    if(arrows.length > 0) {
+    let arrows = Array.from(document.querySelectorAll('.arrow'));
+    if(arrows) {
         arrows.forEach(arrowEl => {
             arrowEl.remove();
         });
     }
+    hideAllRevealedHolders();
     switch (tutStep){
     case 1:
         tutDiv.textContent = 'These are the Gallery Control Buttons';
@@ -72,10 +73,9 @@ const galleryControlsTutorial = (tutStep) => {
     default:
         removeBg();
     break;
+    }
 }
-}
-const removeBg = (e) => {
-        e.stopPropagation();
+const removeBg = () => {
         hideAllRevealedHolders();
         const wrap = document.querySelector('.gallery-wrapper');
         const imgHolder = document.querySelector('#img-holder');
@@ -100,40 +100,6 @@ const createArrow = () => {
     line.classList.add('arrow-line');
     arrow.append(point, line);
     return arrow;
-}
-const galleryControlsHelp = () => {
-    if(document.querySelector('.help-bg')) return;
-    const wrap = document.querySelector('.gallery-wrapper');
-    const helpBg = document.createElement('div');
-    const imgHolder = document.querySelector('#img-holder');
-    const tempDiv = document.createElement('div');
-    tempDiv.classList.add('help-temp-div');
-    const tempText = document.createElement('h3');
-    tempText.classList.add('help-temp-text');
-    tempText.textContent = 'Gallery Controls Tutorial Coming Soon!';
-    const tempTextEnd = document.createElement('h3');
-    tempTextEnd.textContent = 'Click / Tap Anywhere To Close';
-    tempTextEnd.classList.add('help-temp-text');
-    const wipIcon = document.createElement('i');
-    wipIcon.classList.add('fa-person-digging');
-    wipIcon.classList.add('fa-solid');
-    wipIcon.classList.add('fa-2x');
-    tempDiv.appendChild(tempText);
-    tempDiv.appendChild(wipIcon);
-    tempDiv.appendChild(tempTextEnd)
-    helpBg.appendChild(tempDiv);
-    helpBg.classList.add('help-bg');
-    imgHolder.style.overflow = 'hidden';
-    wrap.style.height = '100%';
-    wrap.style.overflow = 'hidden';
-    window.scroll(0,0);
-    wrap.appendChild(helpBg);
-    helpBg.onclick = () => {
-        wrap.style.height = '';
-        imgHolder.style.overflow = '';
-        wrap.style.overflow = '';
-        helpBg.remove();
-    }
 }
 const galleryControlsInit = () => {
     const wrap = document.querySelector('.gallery-wrapper');
@@ -244,6 +210,7 @@ const changeGallery = (e) => {
     }
 }
 const hideHolders = (butt) => {
+    if(document.querySelector('.help-bg')) return;
     const revealedHolders = Array.from(document.querySelectorAll('.revealed'));
     revealedHolders.forEach(holder => {
         if(butt.parentNode !== holder){
@@ -331,7 +298,6 @@ const addModal = (buttonElement, imgSrc, imgOrientation) => {
         modalHolder.appendChild(modalImg);
         modalBg.appendChild(modalHolder);
         wrapper.appendChild(modalBg);
-        //modalBg.onclick = () => modalBg.remove();
         xIcon.onclick = (e) => {
             e.stopPropagation();
             modalBg.remove();
