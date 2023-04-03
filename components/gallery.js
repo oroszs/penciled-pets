@@ -23,14 +23,14 @@ const galleryControlsTutorialSetup = () => {
     tutDiv.onclick = () => {
         tutStep++;
         galleryControlsTutorial(tutStep);
-}
+    }
     galleryControlsTutorial(1);
 }
 const galleryControlsTutorial = (tutStep) => {
     let tutDiv = document.querySelector('.help-temp-div');
     let tutBg = document.querySelector('.help-bg');
     let arrows = Array.from(document.querySelectorAll('.arrow');
-    if(arrows) {
+    if(arrows.length > 0) {
         arrows.forEach(arrowEl => {
             arrowEl.remove();
         });
