@@ -38,7 +38,6 @@ const galleryControlsTutorial = (tutStep) => {
         let medButton = document.querySelector('#medium-holder');
         medButton.classList.add('revealed');
         let arrow = createArrow();
-        arrow.classList.add('arrow-2');
     break;
     default:
     break;
