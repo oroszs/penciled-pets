@@ -55,7 +55,7 @@ const galleryControlsTutorial = (tutStep) => {
     wrap.style.height = '100%';
     wrap.style.overflow = 'hidden';
     window.scroll(0,0);
-    tutBg.onclick = () => removeBg();
+    tutBg.onclick = (e) => removeBg(e);
     tutBg.appendChild(tutDiv);
     wrap.appendChild(tutBg);
     tutDiv.onclick = () => {
@@ -63,7 +63,8 @@ const galleryControlsTutorial = (tutStep) => {
         galleryControlsTutorial(tutStep);
 }
 }
-const removeBg = () => {
+const removeBg = (e) => {
+        e.stopPropagation();
         hideAllRevealedHolders();
         const wrap = document.querySelector('.gallery-wrapper');
         const imgHolder = document.querySelector('#img-holder');
