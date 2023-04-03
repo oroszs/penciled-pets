@@ -29,6 +29,7 @@ const galleryControlsTutorial = (tutStep) => {
         arrow.classList.add('arrow-1');
         const sizeButton = document.querySelector('#size-holder');
         sizeButton.classList.add('revealed');
+        tutBg.appendChild('arrow');
     break;
     default:
     break;
