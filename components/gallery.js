@@ -33,8 +33,6 @@ const galleryControlsTutorial = (tutStep) => {
     break;
     case 3:
         tutDiv.textContent = 'This button filters the images by medium';
-        let sizeButton = document.querySelector('#size-holder');
-        sizeButton.classList.remove('revealed');
         let medButton = document.querySelector('#medium-holder');
         medButton.classList.add('revealed');
         let arrow = createArrow();
