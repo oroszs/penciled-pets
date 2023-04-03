@@ -5,7 +5,7 @@ const galleryInit = () => {
     populateGallery();
     galleryControlsInit();
 }
-const galleryControlsTutorial = (tutStep) => {
+const galleryControlsTutorialSetup = () => {
     const wrap = document.querySelector('.gallery-wrapper');
     const imgHolder = document.querySelector('#img-holder');
     const tutBg = document.createElement('div');
@@ -13,6 +13,28 @@ const galleryControlsTutorial = (tutStep) => {
     let tutDiv = document.createElement('div');
     tutDiv.classList.add('help-temp-div');
     hideAllRevealedHolders();
+    imgHolder.style.overflow = 'hidden';
+    wrap.style.height = '100%';
+    wrap.style.overflow = 'hidden';
+    window.scroll(0,0);
+    tutBg.onclick = (e) => removeBg(e);
+    tutBg.appendChild(tutDiv);
+    wrap.appendChild(tutBg);
+    tutDiv.onclick = () => {
+        tutStep++;
+        galleryControlsTutorial(tutStep);
+}
+    galleryControlsTutorial(1);
+}
+const galleryControlsTutorial = (tutStep) => {
+    let tutDiv = document.querySelector('.help-temp-div');
+    let tutBg = document.querySelector('.help-bg');
+    let arrows = Array.from(document.querySelectorAll('.arrow');
+    if(arrows) {
+        arrows.forEach(arrowEl => {
+            arrowEl.remove();
+        });
+    }
     switch (tutStep){
     case 1:
         tutDiv.textContent = 'These are the Gallery Control Buttons';
@@ -50,17 +72,6 @@ const galleryControlsTutorial = (tutStep) => {
     default:
         removeBg();
     break;
-}
-    imgHolder.style.overflow = 'hidden';
-    wrap.style.height = '100%';
-    wrap.style.overflow = 'hidden';
-    window.scroll(0,0);
-    tutBg.onclick = (e) => removeBg(e);
-    tutBg.appendChild(tutDiv);
-    wrap.appendChild(tutBg);
-    tutDiv.onclick = () => {
-        tutStep++;
-        galleryControlsTutorial(tutStep);
 }
 }
 const removeBg = (e) => {
@@ -142,7 +153,7 @@ const galleryControlsInit = () => {
     const helpButton = document.querySelector('#gallery-controls-help');
     helpButton.onclick = () => {
         helpButton.classList.remove('fa-bounce');
-        galleryControlsTutorial(1);
+        galleryControlsTutorialSetup();
     }
 }
 const changeGallery = (e) => {
