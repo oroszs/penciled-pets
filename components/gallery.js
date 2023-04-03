@@ -25,6 +25,10 @@ const galleryControlsTutorial = (tutStep) => {
     break;
     case 2:
         tutDiv.textContent = 'This button controls the size of the images';
+        const arrow = createArrow();
+        arrow.classList.add('arrow-1');
+        const sizeButton = document.querySelector('#size-holder');
+        sizeButton.classList.add('revealed');
     break;
     default:
     break;
