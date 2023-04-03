@@ -35,8 +35,8 @@ const galleryControlsTutorial = (tutStep) => {
         tutDiv.textContent = 'This button filters the images by medium';
         let medButton = document.querySelector('#medium-holder');
         medButton.classList.add('revealed');
-        let arrow = createArrow();
-        tutBg.appendChild(arrow);
+        let arr = createArrow();
+        tutBg.appendChild(arr);
     break;
     default:
     break;
