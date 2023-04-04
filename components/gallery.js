@@ -38,7 +38,7 @@ const galleryControlsTutorial = (tutStep) => {
     hideAllRevealedHolders();
     switch (tutStep){
     case 1:
-        tutDiv.textContent = 'These are the Gallery Control Buttons';
+        tutDiv.textContent = 'These are the gallery control buttons';
         const arrow1 = createArrow();
         const arrow2 = createArrow();
         const arrow3 = createArrow();
