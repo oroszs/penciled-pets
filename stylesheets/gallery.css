@@ -36,7 +36,7 @@
     width: var(--arrow-width);
     height: var(--arrow-height);
     z-index: 30;
-    top: 95px;
+    top: 120px;
     left: calc(50% - (var(--arrow-width) / 2));
 }
 .arrow-1 {
@@ -256,14 +256,15 @@
     flex-wrap: wrap;
 }
 .help-div {
+    box-sizing: border-box;
+    padding: 5px;
     font-weight: bold;
     cursor: pointer;
     position: relative;
     flex: none;
-    top: 50px;
     background-color: white;
     width: 400px;
-    height: 50px;
+    height: auto;
     color: black;
     border-radius: 5px;
     display: flex;
@@ -272,6 +273,30 @@
     align-items: center;
     box-shadow: 0px 0px 5px white;
     z-index: 31;
+}
+.help-div-holder {
+    position: relative;
+    top: 100px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.help-div-arrow {
+    position: relative;
+    flex: none;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 5px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 10px;
 }
 .help-temp-text {
     flex: none;
@@ -332,10 +357,17 @@
         --arrow-height: calc(var(--arrow-width) * 7);
         top: 115px;
     }
-    .help-div {
-        width: 80%;
-        font-size: 10pt;
+    .help-div-holder {
         top: 100px;
+    }
+    .help-div {
+        position: relative;
+        flex: none;
+        font-size: 10pt;
+        width: 200px;
+    }
+    .help-div-arrow {
+        margin: 5px;
     }
     .modal-x:hover {
         background-color: lightcoral;

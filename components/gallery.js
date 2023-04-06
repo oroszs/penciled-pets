@@ -12,14 +12,41 @@ const galleryControlsTutorialSetup = () => {
     tutBg.classList.add('help-bg');
     let tutDiv = document.createElement('div');
     tutDiv.classList.add('help-div');
+    let tutArrowLeft = document.createElement('div');
+    tutArrowLeft.classList.add('help-div-arrow');
+    tutArrowLeftIcon = document.createElement('i');
+    tutArrowLeftIcon.classList.add('fa-solid');
+    tutArrowLeftIcon.classList.add('fa-arrow-left');
+    tutArrowLeft.appendChild(tutArrowLeftIcon);
+    let tutArrowRight = document.createElement('div');
+    tutArrowRight.classList.add('help-div-arrow');
+    tutArrowRightIcon = document.createElement('i');
+    tutArrowRightIcon.classList.add('fa-solid');
+    tutArrowRightIcon.classList.add('fa-arrow-right');
+    tutArrowRight.appendChild(tutArrowRightIcon);
+    let tutDivHolder = document.createElement('div');
+    tutDivHolder.classList.add('help-div-holder');
     hideAllRevealedHolders();
     imgHolder.style.overflow = 'hidden';
     wrap.style.height = '100%';
     wrap.style.overflow = 'hidden';
     window.scroll(0,0);
-    tutBg.appendChild(tutDiv);
+    tutDivHolder.append(tutArrowLeft, tutDiv, tutArrowRight);
+    tutBg.appendChild(tutDivHolder);
     wrap.appendChild(tutBg);
     let tutStep = 1;
+    tutArrowLeft.onclick = () => {
+        if(tutStep > 1){
+            tutStep--;
+            galleryControlsTutorial(tutStep);
+        }
+    }
+    tutArrowRight.onclick = () => {
+        if(tutStep < 5) {
+            tutStep++;
+            galleryControlsTutorial(tutStep);
+        }
+    }
     tutDiv.onclick = () => {
         tutStep++;
         galleryControlsTutorial(tutStep);
