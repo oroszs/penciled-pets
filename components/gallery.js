@@ -65,7 +65,7 @@ const galleryControlsTutorial = (tutStep) => {
     hideAllRevealedHolders();
     switch (tutStep){
     case 1:
-        tutDiv.textContent = 'These are the gallery control buttons\r\n(1/4)';
+        tutDiv.textContent = 'These are the gallery\r\n control buttons\r\n\r\n(1/4)';
         const arrow1 = createArrow();
         const arrow2 = createArrow();
         const arrow3 = createArrow();
@@ -75,7 +75,7 @@ const galleryControlsTutorial = (tutStep) => {
         tutBg.append(arrow1, arrow2, arrow3);
     break;
     case 2:
-        tutDiv.textContent = 'This button controls the size of the images\r\n(2/4)';
+        tutDiv.textContent = 'This button controls\r\n the size of the images\r\n\r\n(2/4)';
         let arrow = createArrow();
         arrow.classList.add('arrow-1');
         let sizeButton = document.querySelector('#size-holder');
@@ -83,14 +83,14 @@ const galleryControlsTutorial = (tutStep) => {
         tutBg.appendChild(arrow);
     break;
     case 3:
-        tutDiv.textContent = 'This button filters the images by medium\r\n(3/4)';
+        tutDiv.textContent = 'This button filters\r\n the images by medium\r\n\r\n(3/4)';
         let medButton = document.querySelector('#medium-holder');
         medButton.classList.add('revealed');
         let arr = createArrow();
         tutBg.appendChild(arr);
     break;
     case 4:
-        tutDiv.textContent = 'This button filters the images by subject\r\n(4/4)';
+        tutDiv.textContent = 'This button filters\r\n the images by subject\r\n\r\n(4/4)';
         let subButton = document.querySelector('#subject-holder');
         subButton.classList.add('revealed');
         let ar = createArrow();
