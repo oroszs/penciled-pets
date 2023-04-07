@@ -256,6 +256,7 @@
     flex-wrap: wrap;
 }
 .help-div {
+    whitespace: pre;
     box-sizing: border-box;
     padding: 5px;
     font-weight: bold;
