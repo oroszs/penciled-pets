@@ -109,7 +109,7 @@
     .quad {
         width: var(--small-size);
         height: var(--small-size);
-        box-shadow: 7px 7px 7px var(--bubble-shadow-color);
+        box-shadow: 5px 5px 5px var(--bubble-shadow-color);
     }
     .bubbleHolder {
         margin-top: 20px;
