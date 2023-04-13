@@ -352,6 +352,14 @@
     border-radius: 5px;
     box-shadow: 0px 0px 50px black;
 }
+@media screen and (min-width: 500px) and (max-height: 500px) {
+    .arrow {
+        top: 85px;
+    }
+    .help-div-holder {
+        top: 25px;
+    }
+}
 @media screen and (max-width: 500px) {
     .arrow{
         --arrow-margin: 40px;
