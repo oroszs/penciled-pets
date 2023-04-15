@@ -121,6 +121,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.revealed-button {
+    x-index: 31;
+}
 .current-button {
     background-color: var(--current-button-color);
     color: white;
