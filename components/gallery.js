@@ -75,7 +75,7 @@ const galleryControlsTutorial = (tutStep) => {
         tutBg.append(arrow1, arrow2, arrow3);
         let holders = document.querySelectorAll('.button-holder');
         holders.forEach(holder => {
-            holder.classList.add('revealed');
+            holder.classList.add('revealed', 'revealed-button');
         });
     break;
     case 2:
@@ -83,20 +83,20 @@ const galleryControlsTutorial = (tutStep) => {
         let arrow = createArrow();
         arrow.classList.add('arrow-1');
         let sizeButton = document.querySelector('#size-holder');
-        sizeButton.classList.add('revealed');
+        sizeButton.classList.add('revealed', 'revealed-button');
         tutBg.appendChild(arrow);
     break;
     case 3:
         tutDiv.textContent = 'This button filters\r\n the images by medium\r\n\r\n(3/4)';
         let medButton = document.querySelector('#medium-holder');
-        medButton.classList.add('revealed');
+        medButton.classList.add('revealed', 'revealed-button');
         let arr = createArrow();
         tutBg.appendChild(arr);
     break;
     case 4:
         tutDiv.textContent = 'This button filters\r\n the images by subject\r\n\r\n(4/4)';
         let subButton = document.querySelector('#subject-holder');
-        subButton.classList.add('revealed');
+        subButton.classList.add('revealed', 'revealed-button');
         let ar = createArrow();
         ar.classList.add('arrow-3');
         tutBg.appendChild(ar);
