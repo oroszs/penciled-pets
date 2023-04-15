@@ -73,6 +73,10 @@ const galleryControlsTutorial = (tutStep) => {
         arrow2.classList.add('arrow-2');
         arrow3.classList.add('arrow-3');
         tutBg.append(arrow1, arrow2, arrow3);
+        let holders = document.querySelectorAll('.button-holder');
+        holders.forEach(holder => {
+            holder.classList.add('revealed');
+        });
     break;
     case 2:
         tutDiv.textContent = 'This button controls\r\n the size of the images\r\n\r\n(2/4)';
@@ -116,6 +120,10 @@ const hideAllRevealedHolders = () => {
     let revealed = Array.from(document.querySelectorAll('.revealed'));
     revealed.forEach(el => {
         el.classList.remove('revealed');
+    });
+    let revealedButtons = Array.from(document.querySelectorAll('.revealed-button'));
+    revealedButtons.forEach(but => {
+        but.classList.remove('revealed-button');
     });
 }
 const createArrow = () => {
