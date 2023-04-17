@@ -123,6 +123,7 @@
 }
 .revealed-button {
     z-index: 31;
+    box-shadow: 0px 0px 10px white;
 }
 .current-button {
     background-color: var(--current-button-color);
