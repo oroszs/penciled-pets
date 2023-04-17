@@ -34,24 +34,24 @@ const galleryControlsTutorialSetup = () => {
     tutDivHolder.append(tutArrowLeft, tutDiv, tutArrowRight);
     tutBg.appendChild(tutDivHolder);
     wrap.appendChild(tutBg);
-    tutBg.onclick = (e) => {
-        e.stopPropagation();
-        removeBg();
-    }
+    tutBg.onclick = () => removeBg();
     let tutStep = 1;
-    tutArrowLeft.onclick = () => {
+    tutArrowLeft.onclick = (e) => {
+        e.stopPropagation();
         if(tutStep > 1){
             tutStep--;
             galleryControlsTutorial(tutStep);
         }
     }
-    tutArrowRight.onclick = () => {
+    tutArrowRight.onclick = (e) => {
+        e.stopPropagation();
         if(tutStep < 5) {
             tutStep++;
             galleryControlsTutorial(tutStep);
         }
     }
-    tutDiv.onclick = () => {
+    tutDiv.onclick = (e) => {
+        e.stopPropagation();
         tutStep++;
         galleryControlsTutorial(tutStep);
     }
