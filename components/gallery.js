@@ -34,7 +34,10 @@ const galleryControlsTutorialSetup = () => {
     tutDivHolder.append(tutArrowLeft, tutDiv, tutArrowRight);
     tutBg.appendChild(tutDivHolder);
     wrap.appendChild(tutBg);
-    tutBg.onclick = () => removeBg();
+    tutBg.onclick = (e) => {
+        e.stopPropagation();
+        removeBg();
+    }
     let tutStep = 1;
     tutArrowLeft.onclick = () => {
         if(tutStep > 1){
