@@ -476,10 +476,6 @@
         width: auto;
         object-fit: contain;
     }
-    .help-bg {
-        bottom: initial;
-        height:auto;
-    }
 }
 @media screen and (orientation: portrait) {
     .modal-holder {
