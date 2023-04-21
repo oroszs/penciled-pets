@@ -477,7 +477,8 @@
         object-fit: contain;
     }
     .help-bg {
-        min-height: 700px;
+        bottom: initial;
+        height:auto;
     }
 }
 @media screen and (orientation: portrait) {
