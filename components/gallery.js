@@ -28,8 +28,7 @@ const galleryControlsTutorialSetup = () => {
     tutDivHolder.classList.add('help-div-holder');
     hideAllRevealedHolders();
     imgHolder.style.overflow = 'hidden';
-    wrap.style.height = '100%';
-    wrap.style.overflow = 'hidden';
+    wrap.classList.add('wrap-tutorial');
     window.scroll(0,0);
     tutDivHolder.append(tutArrowLeft, tutDiv, tutArrowRight);
     tutBg.appendChild(tutDivHolder);
@@ -115,9 +114,8 @@ const removeBg = () => {
         const wrap = document.querySelector('.gallery-wrapper');
         const imgHolder = document.querySelector('#img-holder');
         const tutBg = document.querySelector('.help-bg');
-        wrap.style.height = '';
         imgHolder.style.overflow = '';
-        wrap.style.overflow = '';
+        wrap.classList.remove('wrap-tutorial');
         tutBg.remove();
 }
 const hideAllRevealedHolders = () => {
