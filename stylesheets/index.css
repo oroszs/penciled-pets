@@ -68,6 +68,7 @@ header a:visited {
     color: black;
 }
 .navbar {
+    font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
     top: 105px;
