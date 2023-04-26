@@ -308,6 +308,35 @@
 .help-temp-text {
     flex: none;
 }
+.help-div-small-holder {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.help-div-size-position {
+    left: -200px;
+    top: 171px;
+}
+.help-div-small {
+    height: var(--button-size);
+    width: auto;
+    flex: none;
+    padding: 5px;
+    z-index: 31;
+    box-shadow: 0px 0px 5px white;
+    background-color: white;
+    border-radius: 5px;
+    margin: var(--button-margin);
+    font-size: 12pt;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .modal-bg {
     position: fixed;
     left: 0px;

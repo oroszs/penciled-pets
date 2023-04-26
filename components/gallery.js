@@ -87,7 +87,16 @@ const galleryControlsTutorial = (tutStep) => {
         arrow.classList.add('arrow-1');
         let sizeButton = document.querySelector('#size-holder');
         sizeButton.classList.add('revealed', 'revealed-button');
-        tutBg.appendChild(arrow);
+        let smlDiv1 = createSmallHelpDiv();
+        smlDiv1.textContent = 'Small';
+        let smlDiv2 = createSmallHelpDiv();
+        smlDiv2.textContent = 'Medium';
+        let smlDiv3 = createSmallHelpDiv();
+        smlDiv3.textContent = 'Large';
+        let smlDivHolder = document.createElement('div');
+        smlDivHolder.classList.add('help-div-small-holder', 'help-div-size-position');
+        smlDivHolder.append(smlDiv1, smlDiv2, smlDiv3);
+        tutBg.append(arrow, smlDivHolder);
     break;
     case 3:
         tutDiv.textContent = 'This button filters\r\n the images by medium\r\n\r\n(3/4)';
@@ -137,6 +146,11 @@ const createArrow = () => {
     line.classList.add('arrow-line');
     arrow.append(point, line);
     return arrow;
+}
+const createSmallHelpDiv = () => {
+    const smlDiv = document.createElement('div');
+    smlDiv.classList.add('help-div-small');
+    return smlDiv;
 }
 const galleryControlsInit = () => {
     const wrap = document.querySelector('.gallery-wrapper');
