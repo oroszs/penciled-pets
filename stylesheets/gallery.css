@@ -408,6 +408,10 @@
     .help-div-holder {
         top: 60px;
     }
+    .help-div-small-holder {
+        top: 100px;
+        left: -150px;
+    }
     .help-div {
         position: relative;
         flex: none;
