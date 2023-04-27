@@ -94,7 +94,7 @@ const galleryControlsTutorial = (tutStep) => {
         let smlDiv3 = createSmallHelpDiv();
         smlDiv3.textContent = 'Large';
         let smlDivHolder = document.createElement('div');
-        smlDivHolder.classList.add('help-div-small-holder', 'help-div-size-position');
+        smlDivHolder.classList.add('help-div-small-holder', 'help-div-small-holder-size-position');
         smlDivHolder.append(smlDiv1, smlDiv2, smlDiv3);
         tutBg.append(arrow, smlDivHolder);
     break;

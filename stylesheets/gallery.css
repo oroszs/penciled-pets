@@ -288,7 +288,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 .help-div-arrow {
     position: relative;
@@ -316,15 +315,15 @@
     justify-content: flex-end;
     align-items: center;
 }
-.help-div-size-position {
-    left: -200px;
+.help-div-small-holder-size-position {
+    margin-right: 350px;
     top: 171px;
 }
 .help-div-small {
     height: var(--button-size);
-    width: auto;
+    width: 75px;
     flex: none;
-    padding: 5px;
+    padding: 10px;
     z-index: 31;
     box-shadow: 0px 0px 5px white;
     background-color: white;
@@ -397,6 +396,9 @@
     .help-div-holder {
         top: 25px;
     }
+    .help-div-small-holder-size-position {
+        top: 136px;
+    }
 }
 @media screen and (max-width: 500px) {
     .arrow{
@@ -408,9 +410,13 @@
     .help-div-holder {
         top: 60px;
     }
-    .help-div-small-holder {
-        top: 100px;
-        left: -150px;
+    .help-div-small-holder-size-position {
+        top: 128px;
+        margin-right: 200px;
+    }
+    .help-div-small {
+        font-size: 8pt;
+        width: 50px;
     }
     .help-div {
         position: relative;
