@@ -45,6 +45,12 @@
 .arrow-3 {
     transform:translate(var(--arrow-margin), 0);
 }
+.s-arrow {
+    transform: rotateZ(270deg);
+    position: relative;
+    top: initial;
+    z-index: 30;
+}
 .arrow-point {
     display: inline-block;
     position: absolute;

@@ -65,6 +65,10 @@ const galleryControlsTutorial = (tutStep) => {
             arrowEl.remove();
         });
     }
+    let smallHolder = document.querySelector('.help-div-small-holder');
+    if(smallHolder) {
+        smallHolder.remove();
+    }
     hideAllRevealedHolders();
     switch (tutStep){
     case 1:
@@ -87,16 +91,28 @@ const galleryControlsTutorial = (tutStep) => {
         arrow.classList.add('arrow-1');
         let sizeButton = document.querySelector('#size-holder');
         sizeButton.classList.add('revealed', 'revealed-button');
+        //-------Gallery Controls Tutorial Detailed Divs Work In Progress-------
+        /*
         let smlDiv1 = createSmallHelpDiv();
         smlDiv1.textContent = 'Small';
         let smlDiv2 = createSmallHelpDiv();
         smlDiv2.textContent = 'Medium';
         let smlDiv3 = createSmallHelpDiv();
         smlDiv3.textContent = 'Large';
+        let sArrow1 = createArrow();
+        sArrow1.classList.add('s-arrow');
+        let sArrow2 = createArrow();
+        sArrow2.classList.add('s-arrow');
+        let sArrow3 = createArrow();
+        sArrow3.classList.add('s-arrow');
+        smlDiv1.appendChild(sArrow1);
+        smlDiv2.appendChild(sArrow2);
+        smlDiv3.appendChild(sArrow3);
         let smlDivHolder = document.createElement('div');
         smlDivHolder.classList.add('help-div-small-holder', 'help-div-small-holder-size-position');
         smlDivHolder.append(smlDiv1, smlDiv2, smlDiv3);
-        tutBg.append(arrow, smlDivHolder);
+        */
+        tutBg.append(arrow);
     break;
     case 3:
         tutDiv.textContent = 'This button filters\r\n the images by medium\r\n\r\n(3/4)';
