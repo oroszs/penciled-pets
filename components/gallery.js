@@ -91,8 +91,6 @@ const galleryControlsTutorial = (tutStep) => {
         arrow.classList.add('arrow-1');
         let sizeButton = document.querySelector('#size-holder');
         sizeButton.classList.add('revealed', 'revealed-button');
-        //-------Gallery Controls Tutorial Detailed Divs Work In Progress-------
-        /*
         let smlDiv1 = createSmallHelpDiv();
         smlDiv1.textContent = 'Small';
         let smlDiv2 = createSmallHelpDiv();
@@ -111,8 +109,7 @@ const galleryControlsTutorial = (tutStep) => {
         let smlDivHolder = document.createElement('div');
         smlDivHolder.classList.add('help-div-small-holder', 'help-div-small-holder-size-position');
         smlDivHolder.append(smlDiv1, smlDiv2, smlDiv3);
-        */
-        tutBg.append(arrow);
+        tutBg.append(arrow, smlDivHolder);
     break;
     case 3:
         tutDiv.textContent = 'This button filters\r\n the images by medium\r\n\r\n(3/4)';
