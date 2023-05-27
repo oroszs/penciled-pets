@@ -56,7 +56,9 @@ const createBubble = (imgObj, quad) => {
         } else {
             el.style.marginRight = `${imgObj.smallMarginRight}px`;
         }    }
-    quad.classList.add('bubbleFadeClass');
+    el.onload = () => {
+        quad.classList.add('bubbleFadeClass');
+    }
     quad.onanimationend = () => {
         quad.firstChild.src = '';
         quad.firstChild.style.marginTop='0px';
