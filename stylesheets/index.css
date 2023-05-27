@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
 }
 header {
     z-index: 19;
-    background-color: white;
+    background-color: var(--gallery-bg);
     padding: 0px;
     font-size: 30pt;
     font-family: 'Gothic A1';
